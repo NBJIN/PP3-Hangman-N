@@ -1,6 +1,7 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
 from words import words
 
+print("Hi and welcome to the Hangman Game!")
+name = input("What is your name: ")
+print("Best of Luck " + name)
+print("The Hangman Game is about to start.")

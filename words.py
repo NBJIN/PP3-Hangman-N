@@ -1,2 +1,1 @@
-words = ['red', 'green', 'blue', 'yellow', 'purple', 'orange'
-]
+words = ['red', 'green', 'blue', 'yellow', 'purple', 'orange']
