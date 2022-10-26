@@ -1,31 +1,25 @@
+import random
+from wordlist import word
+letter = ""
+score = 6
 
-word = "giraffe"
-guesses = 6
+print("Hi and welcome to the Hangman Game!\n")
+name = input("What is your name: ").upper()
+print("\nBest of Luck " + name)
+print("\nThe Hangman Game is about to start.\n")
 
+while score > 0:
 
-
-while guesses > 0:
-    guesses = input("Enter a letter or a word: ")
-
-    if guesses in word:
-        print("Well done you have guessed correctly.")
+    letter = input("Please guess a letter or a word: ")
+    if letter in word:
+        print(f"You have guessed correctly.{score} tries still left.")
     else:
-        guesses -= 1
-        print(f"Your guess was incorrect. {noofplays} left.")
+        score = score - 1  # deducts a life if incorrect
+        print(f"Your guess was incorrect. {score} tries left.")
+        letter = letter + letter
 
-        guesses = guesses + 1
-
-    for letter in word:
-        if letter in word:
-            print(f"{word}")
-    else:
-        print("_", end = " ")
-        guesses += 1
-
-    if guesses == 0:
-        print(f"Well Done the word was {word}. You won!")
-        break
-
-    else:
-        print("Sorry You Lost, Please try again.")
-
+    if letter in letter:
+        print(f"you have already guessed this {letter}")
+    elif letter not in word:
+        print("letter is not in word.")
+        letter.append(score)
