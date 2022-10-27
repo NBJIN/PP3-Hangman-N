@@ -11,9 +11,10 @@ c = "colors"
 cc = "characters"
 
 
-print("Hi and welcome to the Hangman Game!\n")
+
+print("Welcome to the Hangman Game!\n")
 time.sleep(1)
-print("Object of the game is to guess the correct word chosen by the computer.")
+print("Instructions: guess the correct word chosen by the computer.")
 print("The player can only guess one letter or word at a time.")
 time.sleep(1)
 name = input("\nWhat is your name: ").upper()
@@ -30,22 +31,24 @@ while score > 0:
         characters = random.choice("characters")
         break
     else:
-        category = input("Please select a chosen category: c for colors / cc for characters; x for exit, _")
+        category = input("Select category: c for colors / cc for characters; x for exit, _")
     if category == 'x':
         print("Goodbye, please visit again!")
         play_game = False
         break
-    else:
-        letter = input("Please guess a letter or a word: ")
     if letter in category:
-        print(f"You have guessed correctly.{score} tries still left.")
-    else:
-        score = score - 1  # deducts a life if incorrect
+        letter = input("Please guess a letter in the category: ").upper()
+        print(f"You have guessed correctly. {score} tries still left.")
+        break
+    elif letter not in category:
         print(f"Your guess was incorrect. {score} tries left.")
+        score = score - 1  # deducts a life if incorrect
         letter = letter + letter
-
+       
     if letter in category:
         print(f"you have already guessed this {letter}")
-    elif letter not in category:
+
+else:
+        letter not in category
         print("letter is not in word.")
       
