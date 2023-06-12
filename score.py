@@ -1,4 +1,7 @@
 def display_hangman(score):
+    """
+    Function to display hangman
+    """
     score = [  # Stage 1 : head, arm1, arm2, stomach, leg1, leg2
         """
          ---------
@@ -25,7 +28,7 @@ def display_hangman(score):
         | /  |
         |/   O
         |  \\ //
-        |    |        |
+        |    |
         """,
                # Stage 4 : head, arm1, arm2
         """
@@ -39,7 +42,7 @@ def display_hangman(score):
          ---------
         | /  |
         |/   O
-        |  \\ 
+        |  \\
         """,
                # Stage 6 : head
         """
@@ -50,6 +53,6 @@ def display_hangman(score):
                # Stage 7
         """
          ---------
-        | /  | 
+        | /  |
         """,
     ]

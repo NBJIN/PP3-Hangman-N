@@ -1,5 +1,7 @@
 import random
-import time
+from time import sleep
+from wordlists import wordlists
+
 LETTER = ""
 SCORE = 6
 INCORRECT_SCORES = ""
@@ -16,36 +18,80 @@ CHARACTERS = ""
 GAME_RUN = ""
 randomWord = ""
 COUNTER = ""
+wordlists = ""
 
-# welcome / greeting
+# Welcome note to Hangman game
 print("Welcome to the Hangman Game!\n")
-time.sleep(1)
+print("--------------------------------------------------")
+time.sleep(.05)
 print("Instructions: guess the correct word chosen by the computer.")
 print("The player can only guess one letter or word at a time.")
-time.sleep(1)
+print("--------------------------------------------------")
+time.sleep(.05)
 name = input("\nWhat is your name: ").upper()
 print("\nBest of Luck " + name)
-time.sleep(1)
+print("--------------------------------------------------")
+time.sleep(.05)
 print("\nThe Hangman Game is about to start.\n")
-time.sleep(1)
+print("--------------------------------------------------")
+time.sleep(.05)
 
-# choose a random word
+# Selecting a word 
+
+"""
+should be inside function under function name 
+"""
+
 while SCORE > 0:
-    if CATEGORY.upper() == "cc":
-        randomWord = random.choice("characters")
+    if wordlists.upper() == "CC":
+        randomWord = random.choice("CATEGORY")
         break
     else:
-        characters = input("Select category: cc for characters; x for exit, _")
-    if characters == 'x':
+        wordlists = input("Select CATEGORY: CC for characters; X for exit, _")
+    if wordlists == 'X':
         print("Goodbye, please visit again!")
         PLAY_GAME = False
         break
         print("----------")
-    for letter in characters:
-        letter = input("Please guess a letter in characters: \n")
-        print(f"\nGuess is correct, there is a {letter} in the word.")
+    for LETTER in wordlists:
+        LETTER = input("Please guess a letter in characters: \n")
+        print(f"\nGuess is correct, there is a {LETTER} in the word.")
         print("----------")
+    
+    def printWord(letter):
+            COUNTER = 0
+            SCORE = 0
+        for LETTER in randomWord:
+            if (LETTER in LETTER):
+                    print(randomWord[COUNTER], end="")
+                SCORE += 1
+            else:   
+                print(" ", end=" ")
+                COUNTER += 1
+                return SCORE
+    for LETTER in CHARACTERS:
+        print(f"Your guess was incorrect. {SCORE} tries left.")
+        SCORE = SCORE - 1  # deducts a life if incorrect
+        LETTER = LETTER + LETTER
+    while LETTER in CHARACTERS:
+        print("Sorry you have already guessed this {letter}")
+else:
+    LETTER not in CHARACTER
+    print("letter is not in word.")
+    if SCORE == SCORE:
+        print(HANGMAN, [SCORE])
+        print("\nYou've been hanged!")
     else:
+        print("\nYou guessed it!")
+        print("\nThe word was, {characters}")
+        input("n\nPress the enter key to exit")
+
+    def play_again():
+        response = input("Play again? Enter y = yes or n = no")
+
+        if response == 'y':
+            GAME_RUN()
+    """.git/else:
         for x in randomWord:
             print("_", end="")
     def print_hangman(wrong):
@@ -57,7 +103,7 @@ while SCORE > 0:
             print("   | /  |")
             print("   |/   O")
         elif (wrong == 2):
-            print("\n +++---------+++) 
+            print("\n+++---------+++") 
             print("   | /  |")
             print("   |/   O")
             print("   |  \\ ")
@@ -88,40 +134,4 @@ while SCORE > 0:
             print("   |    |")
             print("   |  // \\")
             print("   | ")
-      
-    def printWord(letter):
-            COUNTER = 0
-            SCORE = 0
-            for letter in randomWord:
-                if (letter in letter):
-                    print(randomWord[COUNTER], end="")
-                SCORE += 1
-            else:   
-                print(" ", end=" ")
-                COUNTER += 1
-                return SCORE
-                break
-
-    for letter in characters:
-        print(f"Your guess was incorrect. {SCORE} tries left.")
-        SCORE = SCORE - 1  # deducts a life if incorrect
-        letter = letter + letter
-    while letter in characters:
-        print("Sorry you have already guessed this {letter}")
-
-else:
-    letter not in characters
-    print("letter is not in word.")
-    if SCORE == SCORE:
-        print(HANGMAN, [SCORE])
-        print("\nYou've been hanged!")
-    else:
-        print("\nYou guessed it!")
-        print("\nThe word was, {characters}")
-        input("n\nPress the enter key to exit")
-
-    def play_again():
-        response = input("Play again? Enter y = yes or n = no")
-
-        if response == 'y':
-            GAME_RUN()
+  """    
