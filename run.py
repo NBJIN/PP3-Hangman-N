@@ -1,6 +1,8 @@
 import random
 import time
-from time import sleep
+import score
+from score import show_hangman
+# from time import sleep
 from wordlists import characters
 
 # LETTER = ""
@@ -39,82 +41,92 @@ time.sleep(.05)
 
 # Selecting a character
 
+
 def obtain_character():
     """
     function to choose a character
     """
     character = random.choice(characters)
-    return character
+    return character.upper()
+
+print(obtain_character())
 
 
 def play(character):
+    """
+    function to play game
+    """
     character_complete = "_" * len(character)
     guess = False
     guess_letters = []
     guess_characters = []
-    lives = 6 
-    print(display_hangman(lives))
+    lives = 6
+    print(show_hangman(lives))
     print(character_complete)
 
-while not guess and lives > 0:
-    guess = input("Please guess a letter or character: ").upper()
-    if len(guess) == 1 and guess.isalpha():
-        if guess in guess_letters:
-            print("This letter has been guessed already", guess)
-        elif guess not in character:
-            print(guess, "is not in the character.")
-            lives -= 1
-            guess_letters.append(guess)
-        else:
-            print("Congratulations,", guess, "is correct")
-            guess_letters.append(guess)
-            character_as_list = list(character_complete)
-            indices = [i for i, letter in enumerate(character) if letter == guess]
-            for index in indices:
-                character_as_list[index] = guess
-            character_complete = "".join(character_as_list)
-            if "_" not in character_complete:
+    while not guess and lives > 0:
+        guess = input("Please guess a letter or character: ").upper()
+        if len(guess) == 1 and guess.isalpha():
+            if guess in guess_letters:
+                print("This letter has been guessed already", guess)
+            elif guess not in character:
+                print(guess, "is not in the character.")
+                lives -= 1
+                guess_letters.append(guess)
+            else:
+                print("Congratulations,", guess, "is correct")
+                guess_letters.append(guess)
+                character_as_list = list(character_complete)
+                indices = [i for i, letter in enumerate(characters) if letter == guess]
+                for index in indices:
+                    character_as_list[index] = guess
+                character_complete = "".join(character_as_list)
+                if "_" not in character_complete:
+                    guess = True
+                    break 
+
+        elif len(guess) == len(character) and guess.isalpha():
+            if guess in guess_characters:
+                print("Character already guessed", guess)
+            elif guess != character:
+                print(guess, "is not the character.")
+                lives -= 1
+                guess_characters.append(guess)
+            else:
                 guess = True
+                character_complete = character
+                break
 
-
-    elif len(guess) == len(word) and guess.isalpha():
-        if guess in guess_characters:
-            print("Character already guessed", guess)
-        elif guess != word:
-            print(guess, "is not the word.")
-            lives -= 1
-            guess_characters.append(guess)
         else:
-            guess = True
-            character_complete = character 
+            print("Your guess is incorrect.")
+        print(show_hangman(lives))
+        print(character_complete)
+        print("\n")
 
-
+    if guess is True:
+        print("Congratulations you guessed the character you have won this game")
     else:
-        print("Your guess is incorrect.")
-    print(display_hangman(lives))
-    print(character_complete)
-    print("\n")
-if guessed:
-    print("Congratulations you guessed the character you have won this game")
-else:
-    print("Im sorry you have ran out of lives.  The word was " + character + ". Please try again")
+        print("Im sorry you have ran out of lives.  The word was " + character + ". Please try again")
+
+    return guess
+
 
 def main():
-    character = get_character()
+    """
+    function to play game again
+    """
+    character = obtain_character()
     play(character)
-    while input("Would you like to play again? (Y/N) ").upper() == "Y":
-        word = get_word()
-        play(word)
+    while input("Would you like to play again? (Y/N) ").upper() in ["Y", "YES"]:
+        character = obtain_character()
+        play(character)
 
-if __name__ == "main":
+
+if __name__ == "__main__":
     main()
 
-
-
-
-
 # """
-# should be inside function under function name 
+# should be inside function under function name
 # """
 
 # while SCORE > 0:
@@ -132,7 +144,7 @@ if __name__ == "main":
 #         LETTER = input("Please guess a letter in characters: \n")
 #         print(f"\nGuess is correct, there is a {LETTER} in the word.")
 #         print("----------")
-    
+
 #     def printWord(letter):
 #             COUNTER = 0
 #             SCORE = 0
@@ -140,7 +152,7 @@ if __name__ == "main":
 #             if (LETTER in LETTER):
 #                     print(randomWord[COUNTER], end="")
 #                 SCORE += 1
-#             else:   
+#             else:
 #                 print(" ", end=" ")
 #                 COUNTER += 1
 #                 return SCORE
@@ -167,50 +179,46 @@ if __name__ == "main":
 #         if response == 'y':
 #             GAME_RUN()
 
-
-
-
 #     """.git/else:
 #         for x in randomWord:
 #             print("_", end="")
-#     def print_hangman(wrong):
-#         if (wrong == 0):
-#             print("\n ---------")
-#             print("   | /  |")
-#         elif (wrong == 1):
-#             print("\n ---------")
-#             print("   | /  |")
-#             print("   |/   O")
-#         elif (wrong == 2):
-#             print("\n+++---------+++") 
-#             print("   | /  |")
-#             print("   |/   O")
-#             print("   |  \\ ")
-#         elif (wrong == 3):
-#             print("\n ---------")
-#             print("   | /  |")
-#             print("   |/   O")
-#             print("   |  \\ //")
-#         elif (wrong == 4):
-#             print("\n ---------")
-#             print("   | /  |")
-#             print("   |/   O")
-#             print("   |  \\ //")
-#             print("   |    |")       
-#         elif (wrong == 5):
-#             print("\n ---------")
-#             print("   | /  |")
-#             print("   |/   O")
-#             print("   |  \\ //")
-#             print("   |    |")
-#             print("   |  //")
-#             print("   |")
-#         elif (wrong == 6):
-#             print("\n ---------")
-#             print("   |  / |")
-#             print("   | /  O")
-#             print("   |  \\ //")
-#             print("   |    |")
-#             print("   |  // \\")
-#             print("   | ")
-#   """    
+    # def print_hangman(wrong):
+    #     if (wrong == 0):
+    #         print("\n ---------")
+    #         print("   | /  |")
+    #     elif (wrong == 1):
+    #         print("\n ---------")
+    #         print("   | /  |")
+    #         print("   |/   O")
+    #     elif (wrong == 2):
+    #         print("\n+++---------+++")
+    #         print("   | /  |")
+    #         print("   |/   O")
+    #         print("   |  \\ ")
+    #     elif (wrong == 3):
+    #         print("\n ---------")
+    #         print("   | /  |")
+    #         print("   |/   O")
+    #         print("   |  \\ //")
+    #     elif (wrong == 4):
+    #         print("\n ---------")
+    #         print("   | /  |")
+    #         print("   |/   O")
+    #         print("   |  \\ //")
+    #         print("   |    |")
+    #     elif (wrong == 5):
+    #         print("\n ---------")
+    #         print("   | /  |")
+    #         print("   |/   O")
+    #         print("   |  \\ //")
+    #         print("   |    |")
+    #         print("   |  //")
+    #         print("   |")
+    #     elif (wrong == 6):
+    #         print("\n ---------")
+    #         print("   |  / |")
+    #         print("   | /  O")
+    #         print("   |  \\ //")
+    #         print("   |    |")
+    #         print("   |  // \\")
+    #         print("   | ")

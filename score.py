@@ -1,4 +1,4 @@
-def display_hangman(lives):
+def show_hangman(lives):
     """
     Function to display hangman
     """
@@ -56,4 +56,4 @@ def display_hangman(lives):
         | /  |
         """
     ]
-    return stages[lives]
+#     return stages[lives]
