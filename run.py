@@ -1,6 +1,7 @@
 import random
+import time
 from time import sleep
-from wordlists import words
+from wordlists import characters
 
 # LETTER = ""
 # SCORE = 6
@@ -36,65 +37,139 @@ print("\nThe Hangman Game is about to start.\n")
 print("--------------------------------------------------")
 time.sleep(.05)
 
-# Selecting a word 
+# Selecting a character
 
 def obtain_character():
+    """
+    function to choose a character
+    """
     character = random.choice(characters)
-    return word
+    return character
 
-"""
-should be inside function under function name 
-"""
 
-while SCORE > 0:
-    if wordlists.upper() == "CC":
-        randomWord = random.choice("CATEGORY")
-        break
+def play(character):
+    character_complete = "_" * len(character)
+    guess = False
+    guess_letters = []
+    guess_characters = []
+    lives = 6 
+    print(display_hangman(lives))
+    print(character_complete)
+
+while not guess and lives > 0:
+    guess = input("Please guess a letter or character: ").upper()
+    if len(guess) == 1 and guess.isalpha():
+        if guess in guess_letters:
+            print("This letter has been guessed already", guess)
+        elif guess not in character:
+            print(guess, "is not in the character.")
+            lives -= 1
+            guess_letters.append(guess)
+        else:
+            print("Congratulations,", guess, "is correct")
+            guess_letters.append(guess)
+            character_as_list = list(character_complete)
+            indices = [i for i, letter in enumerate(character) if letter == guess]
+            for index in indices:
+                character_as_list[index] = guess
+            character_complete = "".join(character_as_list)
+            if "_" not in character_complete:
+                guess = True
+
+
+    elif len(guess) == len(word) and guess.isalpha():
+        if guess in guess_characters:
+            print("Character already guessed", guess)
+        elif guess != word:
+            print(guess, "is not the word.")
+            lives -= 1
+            guess_characters.append(guess)
+        else:
+            guess = True
+            character_complete = character 
+
+
     else:
-        wordlists = input("Select CATEGORY: CC for characters; X for exit, _")
-    if wordlists == 'X':
-        print("Goodbye, please visit again!")
-        PLAY_GAME = False
-        break
-        print("----------")
-    for LETTER in wordlists:
-        LETTER = input("Please guess a letter in characters: \n")
-        print(f"\nGuess is correct, there is a {LETTER} in the word.")
-        print("----------")
-    
-    def printWord(letter):
-            COUNTER = 0
-            SCORE = 0
-        for LETTER in randomWord:
-            if (LETTER in LETTER):
-                    print(randomWord[COUNTER], end="")
-                SCORE += 1
-            else:   
-                print(" ", end=" ")
-                COUNTER += 1
-                return SCORE
-    for LETTER in CHARACTERS:
-        print(f"Your guess was incorrect. {SCORE} tries left.")
-        SCORE = SCORE - 1  # deducts a life if incorrect
-        LETTER = LETTER + LETTER
-    while LETTER in CHARACTERS:
-        print("Sorry you have already guessed this {letter}")
+        print("Your guess is incorrect.")
+    print(display_hangman(lives))
+    print(character_complete)
+    print("\n")
+if guessed:
+    print("Congratulations you guessed the character you have won this game")
 else:
-    LETTER not in CHARACTER
-    print("letter is not in word.")
-    if SCORE == SCORE:
-        print(HANGMAN, [SCORE])
-        print("\nYou've been hanged!")
-    else:
-        print("\nYou guessed it!")
-        print("\nThe word was, {characters}")
-        input("n\nPress the enter key to exit")
+    print("Im sorry you have ran out of lives.  The word was " + character + ". Please try again")
 
-    def play_again():
-        response = input("Play again? Enter y = yes or n = no")
+def main():
+    character = get_character()
+    play(character)
+    while input("Would you like to play again? (Y/N) ").upper() == "Y":
+        word = get_word()
+        play(word)
 
-        if response == 'y':
-            GAME_RUN()
+if __name__ == "main":
+    main()
+
+
+
+
+
+# """
+# should be inside function under function name 
+# """
+
+# while SCORE > 0:
+#     if wordlists.upper() == "CC":
+#         randomWord = random.choice("CATEGORY")
+#         break
+#     else:
+#         wordlists = input("Select CATEGORY: CC for characters; X for exit, _")
+#     if wordlists == 'X':
+#         print("Goodbye, please visit again!")
+#         PLAY_GAME = False
+#         break
+#         print("----------")
+#     for LETTER in wordlists:
+#         LETTER = input("Please guess a letter in characters: \n")
+#         print(f"\nGuess is correct, there is a {LETTER} in the word.")
+#         print("----------")
+    
+#     def printWord(letter):
+#             COUNTER = 0
+#             SCORE = 0
+#         for LETTER in randomWord:
+#             if (LETTER in LETTER):
+#                     print(randomWord[COUNTER], end="")
+#                 SCORE += 1
+#             else:   
+#                 print(" ", end=" ")
+#                 COUNTER += 1
+#                 return SCORE
+#     for LETTER in CHARACTERS:
+#         print(f"Your guess was incorrect. {SCORE} tries left.")
+#         SCORE = SCORE - 1  # deducts a life if incorrect
+#         LETTER = LETTER + LETTER
+#     while LETTER in CHARACTERS:
+#         print("Sorry you have already guessed this {letter}")
+# else:
+#     LETTER not in CHARACTER
+#     print("letter is not in word.")
+#     if SCORE == SCORE:
+#         print(HANGMAN, [SCORE])
+#         print("\nYou've been hanged!")
+#     else:
+#         print("\nYou guessed it!")
+#         print("\nThe word was, {characters}")
+#         input("n\nPress the enter key to exit")
+
+#     def play_again():
+#         response = input("Play again? Enter y = yes or n = no")
+
+#         if response == 'y':
+#             GAME_RUN()
+
+
+
+
 #     """.git/else:
 #         for x in randomWord:
 #             print("_", end="")

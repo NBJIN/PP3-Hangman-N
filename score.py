@@ -1,8 +1,8 @@
-def display_hangman(score):
+def display_hangman(lives):
     """
     Function to display hangman
     """
-    score = [  # Stage 1 : head, arm1, arm2, stomach, leg1, leg2
+    stages = [  # Stage 1 : head, arm1, arm2, stomach, leg1, leg2
         """
          ---------
         |  / |
@@ -54,5 +54,6 @@ def display_hangman(score):
         """
          ---------
         | /  |
-        """,
+        """
     ]
+    return stages[lives]
