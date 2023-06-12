@@ -48,6 +48,17 @@ def obtain_character():
     """
     character = random.choice(characters)
     return character.upper()
+    # return character
+
+
+def obtain_letter():
+    """
+    function to choose a character
+    """
+    letter = random.choice(characters)
+    return letter.upper()
+    # return letter
+
 
 print(obtain_character())
 
@@ -57,58 +68,61 @@ def play(character):
     function to play game
     """
     character_complete = "_" * len(character)
-    guess = False
+    success = False
+
     guess_letters = []
     guess_characters = []
     lives = 6
     print(show_hangman(lives))
     print(character_complete)
 
-    while not guess and lives > 0:
-        guess = input("Please guess a letter or character: ").upper()
-        if len(guess) == 1 and guess.isalpha():
-            if guess in guess_letters:
-                print("This letter has been guessed already", guess)
-            elif guess not in character:
-                print(guess, "is not in the character.")
+    while not success and lives > 0:
+        # player_guess = input("Please guess a letter or character: ").upper()
+        player_guess = input("Please guess a letter or character: ")
+        if len(player_guess) == 1 and player_guess.isalpha():
+            if player_guess in guess_letters:
+                print("This letter has been guessed already", player_guess)
+            elif player_guess not in character_complete:
+                print(player_guess, "is not in the character.")
                 lives -= 1
-                guess_letters.append(guess)
+                guess_letters.append(player_guess)
             else:
-                print("Congratulations,", guess, "is correct")
-                guess_letters.append(guess)
+                print("Congratulations,", player_guess, "is correct")
+                guess_letters.append(player_guess)
                 character_as_list = list(character_complete)
-                indices = [i for i, letter in enumerate(characters) if letter == guess]
+                indices = [i for i, letter in enumerate(character) if letter == player_guess]
                 for index in indices:
-                    character_as_list[index] = guess
+                    character_as_list[index] = player_guess
                 character_complete = "".join(character_as_list)
                 if "_" not in character_complete:
-                    guess = True
-                    break 
+                    success = True
+                    break
 
-        elif len(guess) == len(character) and guess.isalpha():
-            if guess in guess_characters:
-                print("Character already guessed", guess)
-            elif guess != character:
-                print(guess, "is not the character.")
+        elif len(player_guess) == len(character) and player_guess.isalpha():
+            if player_guess in guess_characters:
+                print("Character already guessed", player_guess)
+            elif player_guess != character:
+                print(player_guess, "is not the character.")
                 lives -= 1
-                guess_characters.append(guess)
+                guess_characters.append(player_guess)
             else:
-                guess = True
+                success = True
                 character_complete = character
                 break
 
         else:
             print("Your guess is incorrect.")
+            lives -= 1
         print(show_hangman(lives))
         print(character_complete)
         print("\n")
 
-    if guess is True:
+    if success:
         print("Congratulations you guessed the character you have won this game")
     else:
         print("Im sorry you have ran out of lives.  The word was " + character + ". Please try again")
 
-    return guess
+    return success
 
 
 def main():
@@ -117,7 +131,7 @@ def main():
     """
     character = obtain_character()
     play(character)
-    while input("Would you like to play again? (Y/N) ").upper() in ["Y", "YES"]:
+    while input("Would you like to play again? (y/n) ").upper() in ["y", "yes"]:
         character = obtain_character()
         play(character)
 

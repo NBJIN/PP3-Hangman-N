@@ -12,7 +12,7 @@ def show_hangman(lives):
         |  // \\
         |
         """,
-               # Stage 2 : head, arm1, arm2, stomach, leg1
+              # Stage 2 : head, arm1, arm2, stomach, leg1
         """
          ---------
         | /  |
