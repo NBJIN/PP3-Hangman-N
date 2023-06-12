@@ -1,24 +1,24 @@
 import random
 from time import sleep
-from wordlists import wordlists
+from wordlists import words
 
-LETTER = ""
-SCORE = 6
-INCORRECT_SCORES = ""
-PLAY_GAME = "true"
-PLAY_GAME = "false"
-TRUE = ""
-CATEGORY = ""
-X = "exit"
-C = "colors"
-CC = "characters"
-HANGMAN = ""
-PRESENTLY = ""
-CHARACTERS = ""
-GAME_RUN = ""
-randomWord = ""
-COUNTER = ""
-wordlists = ""
+# LETTER = ""
+# SCORE = 6
+# INCORRECT_SCORES = ""
+# PLAY_GAME = "true"
+# PLAY_GAME = "false"
+# TRUE = ""
+# CATEGORY = ""
+# X = "exit"
+# C = "colors"
+# CC = "characters"
+# HANGMAN = ""
+# PRESENTLY = ""
+# CHARACTERS = ""
+# GAME_RUN = ""
+# randomWord = ""
+# COUNTER = ""
+# wordlists = ""
 
 # Welcome note to Hangman game
 print("Welcome to the Hangman Game!\n")
@@ -37,6 +37,10 @@ print("--------------------------------------------------")
 time.sleep(.05)
 
 # Selecting a word 
+
+def obtain_character():
+    character = random.choice(characters)
+    return word
 
 """
 should be inside function under function name 
@@ -91,47 +95,47 @@ else:
 
         if response == 'y':
             GAME_RUN()
-    """.git/else:
-        for x in randomWord:
-            print("_", end="")
-    def print_hangman(wrong):
-        if (wrong == 0):
-            print("\n ---------")
-            print("   | /  |")
-        elif (wrong == 1):
-            print("\n ---------")
-            print("   | /  |")
-            print("   |/   O")
-        elif (wrong == 2):
-            print("\n+++---------+++") 
-            print("   | /  |")
-            print("   |/   O")
-            print("   |  \\ ")
-        elif (wrong == 3):
-            print("\n ---------")
-            print("   | /  |")
-            print("   |/   O")
-            print("   |  \\ //")
-        elif (wrong == 4):
-            print("\n ---------")
-            print("   | /  |")
-            print("   |/   O")
-            print("   |  \\ //")
-            print("   |    |")       
-        elif (wrong == 5):
-            print("\n ---------")
-            print("   | /  |")
-            print("   |/   O")
-            print("   |  \\ //")
-            print("   |    |")
-            print("   |  //")
-            print("   |")
-        elif (wrong == 6):
-            print("\n ---------")
-            print("   |  / |")
-            print("   | /  O")
-            print("   |  \\ //")
-            print("   |    |")
-            print("   |  // \\")
-            print("   | ")
-  """    
+#     """.git/else:
+#         for x in randomWord:
+#             print("_", end="")
+#     def print_hangman(wrong):
+#         if (wrong == 0):
+#             print("\n ---------")
+#             print("   | /  |")
+#         elif (wrong == 1):
+#             print("\n ---------")
+#             print("   | /  |")
+#             print("   |/   O")
+#         elif (wrong == 2):
+#             print("\n+++---------+++") 
+#             print("   | /  |")
+#             print("   |/   O")
+#             print("   |  \\ ")
+#         elif (wrong == 3):
+#             print("\n ---------")
+#             print("   | /  |")
+#             print("   |/   O")
+#             print("   |  \\ //")
+#         elif (wrong == 4):
+#             print("\n ---------")
+#             print("   | /  |")
+#             print("   |/   O")
+#             print("   |  \\ //")
+#             print("   |    |")       
+#         elif (wrong == 5):
+#             print("\n ---------")
+#             print("   | /  |")
+#             print("   |/   O")
+#             print("   |  \\ //")
+#             print("   |    |")
+#             print("   |  //")
+#             print("   |")
+#         elif (wrong == 6):
+#             print("\n ---------")
+#             print("   |  / |")
+#             print("   | /  O")
+#             print("   |  \\ //")
+#             print("   |    |")
+#             print("   |  // \\")
+#             print("   | ")
+#   """    
