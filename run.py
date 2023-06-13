@@ -1,6 +1,6 @@
 import random
 import time
-import score
+# import score
 from score import show_hangman
 # from time import sleep
 from wordlists import characters
@@ -9,19 +9,19 @@ from wordlists import characters
 # Welcome note to Hangman game
 print("Welcome to the Hangman Game!\n")
 print("--------------------------------------------------")
-# time.sleep(.05)
+time.sleep(1)
 print("Instructions: guess the correct word chosen by the computer.")
 print("The player can only guess one letter or word at a time.")
 print("All enteries to be made in uppercase")
 print("--------------------------------------------------")
-# time.sleep(.05)
+time.sleep(1)
 name = input("\nWhat is your name: ").upper()
 print("\nBest of Luck " + name)
 print("--------------------------------------------------")
-# time.sleep(.05)
+time.sleep(1)
 print("\nThe Hangman Game is about to start.\n")
 print("--------------------------------------------------")
-# time.sleep(.05)
+time.sleep(1)
 
 # Selecting a character
 
