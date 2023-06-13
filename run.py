@@ -48,7 +48,7 @@ print(obtain_character())
 # print(obtain_letter())
 
 
-def play_hangman():
+def play_hangman(character):
     """
     function to play game
     """
@@ -65,10 +65,11 @@ def play_hangman():
     print(character_complete)
 
     while not success and lives > 0:
-        # player_guess = input("Please guess a letter or character: ").upper()
-        player_guess = input("Please guess a letter or character: ")
+        player_guess = input("Please guess a letter or character: ").upper()
+        # player_guess = input("Please guess a letter or character: ")
+
         if len(player_guess) == 1 and player_guess.isalpha():
-            if player_guess in guess_letters:
+            if player_guess in guess_letters or player_guess in guess_characters:
                 print("This letter has been guessed already", player_guess)
             elif player_guess not in character_complete:
                 print(player_guess, "is not in the character.")
@@ -78,7 +79,7 @@ def play_hangman():
                 print("Congratulations,", player_guess, "is correct")
                 guess_letters.append(player_guess)
                 character_as_list = list(character_complete)
-                indices = [i for i, letter in enumerate(character) if letter.upper() == player_guess.upper()]
+                indices = [i for i, letter in enumerate(character.upper()) if letter == player_guess]
                 for index in indices:
                     character_as_list[index] = player_guess
                 character_complete = "".join(character_as_list)
@@ -118,10 +119,10 @@ def main():
     function to play game again
     """
     character = obtain_character()
-    play_hangman()
+    play_hangman(character)
     while input("Would you like to play again? (y/n) ").upper() in ["y", "yes"]:
         character = obtain_character()
-        play_hangman()
+        play_hangman(character)
 
 
 if __name__ == "__main__":

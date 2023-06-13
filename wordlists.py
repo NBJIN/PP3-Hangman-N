@@ -1,4 +1,4 @@
 """
 List of Cartoon Characters
 """
-characters = ["Duggie", "Bluey", "Minnie"]
+characters = ["DUGGIE", "BlUEY", "MINNIE"]
