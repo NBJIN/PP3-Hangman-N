@@ -56,4 +56,4 @@ def show_hangman(lives):
         | /  |
         """
     ]
-#     return stages[lives]
+    return stages[lives]

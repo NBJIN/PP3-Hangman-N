@@ -26,18 +26,19 @@ from wordlists import characters
 # Welcome note to Hangman game
 print("Welcome to the Hangman Game!\n")
 print("--------------------------------------------------")
-time.sleep(.05)
+# time.sleep(.05)
 print("Instructions: guess the correct word chosen by the computer.")
 print("The player can only guess one letter or word at a time.")
+print("All enteries to be made in uppercase")
 print("--------------------------------------------------")
-time.sleep(.05)
+# time.sleep(.05)
 name = input("\nWhat is your name: ").upper()
 print("\nBest of Luck " + name)
 print("--------------------------------------------------")
-time.sleep(.05)
+# time.sleep(.05)
 print("\nThe Hangman Game is about to start.\n")
 print("--------------------------------------------------")
-time.sleep(.05)
+# time.sleep(.05)
 
 # Selecting a character
 
@@ -61,6 +62,7 @@ def obtain_letter():
 
 
 print(obtain_character())
+# print(obtain_letter())
 
 
 def play(character):
@@ -68,8 +70,9 @@ def play(character):
     function to play game
     """
     character_complete = "_" * len(character)
+    character = character.upper()
     success = False
-
+    player_guess = []
     guess_letters = []
     guess_characters = []
     lives = 6
@@ -90,7 +93,7 @@ def play(character):
                 print("Congratulations,", player_guess, "is correct")
                 guess_letters.append(player_guess)
                 character_as_list = list(character_complete)
-                indices = [i for i, letter in enumerate(character) if letter == player_guess]
+                indices = [i for i, letter in enumerate(character) if letter.upper() == player_guess.upper()]
                 for index in indices:
                     character_as_list[index] = player_guess
                 character_complete = "".join(character_as_list)
@@ -101,7 +104,7 @@ def play(character):
         elif len(player_guess) == len(character) and player_guess.isalpha():
             if player_guess in guess_characters:
                 print("Character already guessed", player_guess)
-            elif player_guess != character:
+            elif player_guess.upper() != character:
                 print(player_guess, "is not the character.")
                 lives -= 1
                 guess_characters.append(player_guess)
