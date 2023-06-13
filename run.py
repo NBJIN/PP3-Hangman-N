@@ -35,12 +35,12 @@ def obtain_character():
     # return character
 
 
-def obtain_letter():
+# def obtain_letter():
     """
     function to choose a character
     """
-    letter = random.choice(characters)
-    return letter.upper()
+    # letter = random.choice(characters)
+    # return letter.upper()
     # return letter
 
 
@@ -48,17 +48,19 @@ print(obtain_character())
 # print(obtain_letter())
 
 
-def play(character):
+def play_hangman():
     """
     function to play game
     """
+    character = obtain_character()
     character_complete = "_" * len(character)
-    character = character.upper()
+    # character = character.upper()
     success = False
     player_guess = []
     guess_letters = []
     guess_characters = []
     lives = 6
+
     print(show_hangman(lives))
     print(character_complete)
 
@@ -116,10 +118,10 @@ def main():
     function to play game again
     """
     character = obtain_character()
-    play(character)
+    play_hangman()
     while input("Would you like to play again? (y/n) ").upper() in ["y", "yes"]:
         character = obtain_character()
-        play(character)
+        play_hangman()
 
 
 if __name__ == "__main__":
