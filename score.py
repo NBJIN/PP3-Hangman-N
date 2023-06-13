@@ -4,7 +4,7 @@ def show_hangman(lives):
     """
     stages = [  # Stage 1 : head, arm1, arm2, stomach, leg1, leg2
         """
-         ---------
+        ---------
         |  / |
         | /  O
         |  \\ //
@@ -12,9 +12,9 @@ def show_hangman(lives):
         |  // \\
         |
         """,
-              # Stage 2 : head, arm1, arm2, stomach, leg1
+        # Stage 2 : head, arm1, arm2, stomach, leg1
         """
-         ---------
+        ---------
         | /  |
         |/   O
         |  \\ //
@@ -22,37 +22,37 @@ def show_hangman(lives):
         |  //
         |
         """,
-               # Stage 3 : head, arm1, arm2, stomach
+        # Stage 3 : head, arm1, arm2, stomach
         """
-         ---------
+        ---------
         | /  |
         |/   O
         |  \\ //
         |    |
         """,
-               # Stage 4 : head, arm1, arm2
+        # Stage 4 : head, arm1, arm2
         """
-         ---------
+        ---------
         | /  |
         |/   O
         |  \\ //
         """,
-               # Stage 5 : head, arm1
+        # Stage 5 : head, arm1
         """
-         ---------
+        ---------
         | /  |
         |/   O
         |  \\
         """,
-               # Stage 6 : head
+        # Stage 6 : head
         """
-         ---------
+        ---------
         | /  |
         |/   O
         """,
-               # Stage 7
+        # Stage 7
         """
-         ---------
+        ---------
         | /  |
         """
     ]
