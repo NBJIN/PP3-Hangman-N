@@ -78,14 +78,14 @@ def play_hangman(character, lives):
                     character_as_list = list(character_complete)
                     indices = [
                         i for i, letter in enumerate(character.upper())
-                        if character_complete == player_guess
+                        if letter == player_guess and character_complete[i] == "_"
                     ]
                     for index in indices:
                         character_as_list[index] = player_guess
                     character_complete = "".join(character_as_list)
-                    if "_" not in character:
+                    if "_" not in character_complete and player_guess in character_complete:
                         success = True
-                        # break
+                        break
 
             elif len(player_guess) == len(character) and \
                     player_guess.isalpha():
@@ -98,7 +98,7 @@ def play_hangman(character, lives):
                 else:
                     success = True
                     character_complete = character
-                    # break
+                    break
 
             else:
                 print("Your guess is incorrect.")
