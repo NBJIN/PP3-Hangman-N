@@ -116,12 +116,13 @@ def play_hangman(character, lives):
     if success:
         print("Congratulations you guessed the character "
               "you have won this game")
+        print(character_complete)
     else:
         print("Im sorry you have ran out of lives. "
               "The word was ", character)
         print("Please try again")
 
-    print(character_complete)
+    # print(character_complete)
 
     return success
 
