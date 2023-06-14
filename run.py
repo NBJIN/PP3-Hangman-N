@@ -1,3 +1,7 @@
+
+"""
+Libraries and imports
+"""
 import random
 import time
 # import score
@@ -35,20 +39,10 @@ def obtain_character():
     # return character
 
 
-# def obtain_letter():
-    """
-    function to choose a character
-    """
-    # letter = random.choice(characters)
-    # return letter.upper()
-    # return letter
+# print(obtain_character())
 
 
-print(obtain_character())
-# print(obtain_letter())
-
-
-def play_hangman(character):
+def play_hangman(character, lives):
     """
     function to play game
     """
@@ -57,59 +51,72 @@ def play_hangman(character):
     # character = character.upper()
     success = False
     player_guess = []
-    guess_letters = []
+    # guess_letters = []
     guess_characters = []
+    # tries = []
     lives = 6
 
     print(show_hangman(lives))
     print(character_complete)
+    print(character)
 
     while not success and lives > 0:
         player_guess = input("Please guess a letter or character: ").upper()
         # player_guess = input("Please guess a letter or character: ")
+        try:
+            if len(player_guess) == 1 and player_guess.isalpha():
+                if player_guess in guess_characters:
+                    print("This letter has been guessed already", player_guess)
+                elif player_guess not in character:
+                    print(player_guess, "is not in the character.")
+                    print("You loose a life")
+                    lives -= 1
+                    guess_characters.append(player_guess)
+                else:
+                    print("Congratulations,", player_guess, "is correct")
+                    guess_characters.append(player_guess)
+                    character_as_list = list(character_complete)
+                    indices = [
+                        i for i, letter in enumerate(character.upper())
+                        if character_complete == player_guess
+                    ]
+                    for index in indices:
+                        character_as_list[index] = player_guess
+                    character_complete = "".join(character_as_list)
+                    if "_" not in character:
+                        success = True
+                        # break
 
-        if len(player_guess) == 1 and player_guess.isalpha():
-            if player_guess in guess_letters or player_guess in guess_characters:
-                print("This letter has been guessed already", player_guess)
-            elif player_guess not in character_complete:
-                print(player_guess, "is not in the character.")
-                lives -= 1
-                guess_letters.append(player_guess)
-            else:
-                print("Congratulations,", player_guess, "is correct")
-                guess_letters.append(player_guess)
-                character_as_list = list(character_complete)
-                indices = [i for i, letter in enumerate(character.upper()) if letter == player_guess]
-                for index in indices:
-                    character_as_list[index] = player_guess
-                character_complete = "".join(character_as_list)
-                if "_" not in character_complete:
+            elif len(player_guess) == len(character) and \
+                    player_guess.isalpha():
+                if player_guess in guess_characters:
+                    print("Character already guessed", player_guess)
+                elif player_guess.upper() != character:
+                    print(player_guess, "is not the character.")
+                    lives -= 1
+                    guess_characters.append(player_guess)
+                else:
                     success = True
-                    break
+                    character_complete = character
+                    # break
 
-        elif len(player_guess) == len(character) and player_guess.isalpha():
-            if player_guess in guess_characters:
-                print("Character already guessed", player_guess)
-            elif player_guess.upper() != character:
-                print(player_guess, "is not the character.")
-                lives -= 1
-                guess_characters.append(player_guess)
             else:
-                success = True
-                character_complete = character
-                break
+                print("Your guess is incorrect.")
+                lives -= 1
+            print(show_hangman(lives))
+            print(character_complete)
+            print("\n")
 
-        else:
-            print("Your guess is incorrect.")
-            lives -= 1
-        print(show_hangman(lives))
-        print(character_complete)
-        print("\n")
+        except ValueError:
+            print("Invalid input. Please try again.")
 
     if success:
-        print("Congratulations you guessed the character you have won this game")
+        print("Congratulations you guessed the character "
+              "you have won this game")
     else:
-        print("Im sorry you have ran out of lives.  The word was " + character + ". Please try again")
+        print("Im sorry you have ran out of lives. "
+              "The word was " + character + ". "
+              "Please try again")
 
     return success
 
@@ -119,10 +126,12 @@ def main():
     function to play game again
     """
     character = obtain_character()
-    play_hangman(character)
-    while input("Would you like to play again? (y/n) ").upper() in ["y", "yes"]:
+    lives = 6
+    play_hangman(character, lives)
+    while input("Would you like to play again? "
+                "(y/n) ").upper() in ["y", "yes"]:
         character = obtain_character()
-        play_hangman(character)
+        play_hangman(character, lives)
 
 
 if __name__ == "__main__":

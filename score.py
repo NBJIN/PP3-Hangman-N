@@ -1,8 +1,14 @@
+"""
+score.py holds code for displaying the hangman
+"""
+
+
 def show_hangman(lives):
     """
     Function to display hangman
     """
-    stages = [  # Stage 1 : head, arm1, arm2, stomach, leg1, leg2
+    stages = [
+        # Stage 1 : head, arm1, arm2, stomach, leg1, leg2
         """
         ---------
         |  / |
