@@ -6,6 +6,7 @@ import random
 import time
 # import score
 from score import show_hangman
+from score import win
 # from time import sleep
 from wordlists import characters
 
@@ -115,8 +116,7 @@ def play_hangman(character, lives):
 
     if success:
         print("Congratulations you guessed the character "
-              "you have won this game")
-        print(character_complete)
+              + character_complete + " you have won this game")
     else:
         print("Im sorry you have ran out of lives. "
               "The word was ", character)
@@ -135,9 +135,12 @@ def main():
     lives = 6
     play_hangman(character, lives)
     while input("Would you like to play again? "
-                "(y/n) ").upper() in ["y", "yes"]:
+                "(y/n) ").upper() in ["Y", "YES"]:
+        print("Start a new game")
         character = obtain_character()
+        lives = 6
         play_hangman(character, lives)
+
 
 
 if __name__ == "__main__":
