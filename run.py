@@ -46,7 +46,8 @@ def play_hangman(character, lives):
     """
     function to play game
     """
-    character = obtain_character()
+    # # character = obtain_character()
+    # character = character_complete.upper()
     character_complete = "_" * len(character)
     # character = character.upper()
     success = False
@@ -77,13 +78,15 @@ def play_hangman(character, lives):
                     guess_characters.append(player_guess)
                     character_as_list = list(character_complete)
                     indices = [
-                        i for i, letter in enumerate(character.upper())
-                        if letter == player_guess and character_complete[i] == "_"
+                        i for i, letter in enumerate(character)
+                        if letter == player_guess and
+                        character_complete[i] == "_"
                     ]
                     for index in indices:
                         character_as_list[index] = player_guess
                     character_complete = "".join(character_as_list)
-                    if "_" not in character_complete and player_guess in character_complete:
+                    # if "_" not in character_complete.replace(player_guess, '') and all(letter != "_" for letter in character_complete):
+                    if "_" not in character_complete:
                         success = True
                         break
 
@@ -115,8 +118,10 @@ def play_hangman(character, lives):
               "you have won this game")
     else:
         print("Im sorry you have ran out of lives. "
-              "The word was " + character + ". "
-              "Please try again")
+              "The word was ", character)
+        print("Please try again")
+
+    print(character_complete)
 
     return success
 
