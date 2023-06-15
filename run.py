@@ -73,6 +73,7 @@ def play_hangman(character, lives):
                     print(player_guess, "is not in the character.")
                     print("You loose a life")
                     lives -= 1
+                    print(f"You have {lives} lives remaining")
                     guess_characters.append(player_guess)
                 else:
                     print("Congratulations,", player_guess, "is correct")
@@ -98,6 +99,7 @@ def play_hangman(character, lives):
                 elif player_guess.upper() != character:
                     print(player_guess, "is not the character.")
                     lives -= 1
+                    print(f"You have {lives} lives remaining")
                     guess_characters.append(player_guess)
                 else:
                     success = True
