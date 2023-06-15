@@ -6,13 +6,13 @@ import random
 import time
 # import score
 from score import show_hangman
-from score import win
+from score import win, loose, welcome
 # from time import sleep
 from wordlists import characters
 
 
 # Welcome note to Hangman game
-print("Welcome to the Hangman Game!\n")
+print(welcome)
 print("--------------------------------------------------")
 time.sleep(1)
 print("Instructions: guess the correct word chosen by the computer.")
@@ -120,12 +120,12 @@ def play_hangman(character, lives):
     if success:
         print("Congratulations you guessed the character "
               + character_complete + " you have won this game")
+        print(win)
     else:
+        print(loose)
         print("The game has now ended. "
               "The word was ", character)
         print("Please try again")
-
-    # print(character_complete)
 
     return success
 
