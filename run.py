@@ -6,7 +6,11 @@ import random
 import time
 # import score
 from score import show_hangman
-from score import win, loose, welcome
+from score import (
+    win,
+    loose, 
+    welcome,
+    )
 # from time import sleep
 from wordlists import characters
 
@@ -19,6 +23,46 @@ print("Instructions: guess the correct word chosen by the computer.")
 print("The player can only guess one letter or word at a time.")
 print("All enteries to be made in uppercase")
 print("--------------------------------------------------")
+time.sleep(1)
+print("MENU")
+time.sleep(1)
+print("Choose " + "1" + " To Start Playing The Hangman Game")
+print("Choose " + "2" + " To Choose The Desired Level")
+print("--------------------------------------------------")
+
+
+def game_mode():
+    while True:
+        setup = input()
+        if setup == "1":
+            # menu = True
+            # game = "play"
+            return "play"
+
+        elif setup == "2":
+            # menu = True
+            # game = "level"
+            return "level"
+        else: 
+            print("Please Choose 1 or 2")
+
+
+def level():
+    print("Select Level\n")
+    print("Choose A for level 1 which has 6 lives")
+    print("Choose B for level 2 which has 4 lives")
+
+    level = False
+    while not level:
+        options = input("\n").upper()
+        if options == "A":
+            level = True
+            lives = 6
+            return lives
+        elif options == "B":
+            level = True
+            lives = 4
+
 time.sleep(1)
 name = input("\nWhat is your name: ").upper()
 print("\nBest of Luck " + name)

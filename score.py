@@ -91,3 +91,9 @@ loose = """
     _| \___/  \__,_|     _____| \___/  \___/  ____/ \___| 
 
 """.strip()
+
+menu = [
+    "Choose 1 To Start Playing The Hangman Game"
+    "Choose 2 To Choose The Desired Level"
+   
+]
