@@ -8,7 +8,7 @@ import time
 from score import show_hangman
 from score import (
     win,
-    loose, 
+    loose,
     welcome,
     )
 # from time import sleep
@@ -32,36 +32,47 @@ print("--------------------------------------------------")
 
 
 def game_mode():
-    while True:
+    """
+    Player chooses wheather to play hangman or choose a level 
+    """
+    menu = False
+    while not menu:
         setup = input()
         if setup == "1":
-            # menu = True
-            # game = "play"
-            return "play"
+            menu = True
+            stage = "play"
+            return "stage"
 
         elif setup == "2":
-            # menu = True
-            # game = "level"
-            return "level"
-        else: 
+            menu = True
+            stage = "level"
+            return "stage"
+        else:
             print("Please Choose 1 or 2")
 
 
-def level():
+def stage():
+    """
+    Player chooses what level they want to play at
+    """
+
     print("Select Level\n")
     print("Choose A for level 1 which has 6 lives")
     print("Choose B for level 2 which has 4 lives")
 
-    level = False
-    while not level:
-        options = input("\n").upper()
-        if options == "A":
-            level = True
+    # stage = False
+    while not stage:
+        menu = input("\n").upper()
+        if menu == "A":
+            stage = True
             lives = 6
             return lives
-        elif options == "B":
-            level = True
+        elif menu == "B":
+            stage = True
             lives = 4
+        else:
+            print("Please select A or B")
+
 
 time.sleep(1)
 name = input("\nWhat is your name: ").upper()
