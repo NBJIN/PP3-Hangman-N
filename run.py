@@ -4,86 +4,14 @@ Libraries and imports
 """
 import random
 import time
-# import score
-from score import show_hangman
 from score import (
+    show_hangman,
     win,
     loose,
     welcome,
     )
-# from time import sleep
+from time import sleep
 from wordlists import characters
-
-
-# Welcome note to Hangman game
-print(welcome)
-print("--------------------------------------------------")
-time.sleep(1)
-print("Instructions: guess the correct word chosen by the computer.")
-print("The player can only guess one letter or word at a time.")
-print("All enteries to be made in uppercase")
-print("--------------------------------------------------")
-time.sleep(1)
-print("MENU")
-time.sleep(1)
-print("Choose " + "1" + " To Start Playing The Hangman Game")
-print("Choose " + "2" + " To Choose The Desired Level")
-print("--------------------------------------------------")
-
-
-def game_mode():
-    """
-    Player chooses wheather to play hangman or choose a level 
-    """
-    menu = False
-    while not menu:
-        setup = input()
-        if setup == "1":
-            menu = True
-            stage = "play"
-            return "stage"
-
-        elif setup == "2":
-            menu = True
-            stage = "level"
-            return "stage"
-        else:
-            print("Please Choose 1 or 2")
-
-
-def stage():
-    """
-    Player chooses what level they want to play at
-    """
-
-    print("Select Level\n")
-    print("Choose A for level 1 which has 6 lives")
-    print("Choose B for level 2 which has 4 lives")
-
-    # stage = False
-    while not stage:
-        menu = input("\n").upper()
-        if menu == "A":
-            stage = True
-            lives = 6
-            return lives
-        elif menu == "B":
-            stage = True
-            lives = 4
-        else:
-            print("Please select A or B")
-
-
-time.sleep(1)
-name = input("\nWhat is your name: ").upper()
-print("\nBest of Luck " + name)
-print("--------------------------------------------------")
-time.sleep(1)
-print("\nThe Hangman Game is about to start.\n")
-print("--------------------------------------------------")
-time.sleep(1)
-
-# Selecting a character
 
 
 def obtain_character():
@@ -92,26 +20,16 @@ def obtain_character():
     """
     character = random.choice(characters)
     return character.upper()
-    # return character
-
-
-# print(obtain_character())
 
 
 def play_hangman(character, lives):
     """
     function to play game
     """
-    # # character = obtain_character()
-    # character = character_complete.upper()
     character_complete = "_" * len(character)
-    # character = character.upper()
     success = False
     player_guess = []
-    # guess_letters = []
     guess_characters = []
-    # tries = []
-    lives = 6
 
     print(show_hangman(lives))
     print(character_complete)
@@ -119,7 +37,6 @@ def play_hangman(character, lives):
 
     while not success and lives > 0:
         player_guess = input("Please guess a letter or character: ").upper()
-        # player_guess = input("Please guess a letter or character: ")
         try:
             if len(player_guess) == 1 and player_guess.isalpha():
                 if player_guess in guess_characters:
@@ -142,7 +59,6 @@ def play_hangman(character, lives):
                     for index in indices:
                         character_as_list[index] = player_guess
                     character_complete = "".join(character_as_list)
-                    # if "_" not in character_complete.replace(player_guess, '') and all(letter != "_" for letter in character_complete):
                     if "_" not in character_complete:
                         success = True
                         break
@@ -173,9 +89,10 @@ def play_hangman(character, lives):
             print("Invalid input. Please try again.")
 
     if success:
+        print(win)
         print("Congratulations you guessed the character "
               + character_complete + " you have won this game")
-        print(win)
+
     else:
         print(loose)
         print("The game has now ended. "
@@ -187,17 +104,75 @@ def play_hangman(character, lives):
 
 def main():
     """
-    function to play game again
+    Welcome player to hangman and 
+    they can choose wheater to play the game 
+    or choose a different level.  
     """
-    character = obtain_character()
-    lives = 6
-    play_hangman(character, lives)
-    while input("Would you like to play again? "
-                "(y/n) ").upper() in ["Y", "YES"]:
-        print("Start a new game")
-        character = obtain_character()
-        lives = 6
-        play_hangman(character, lives)
+    print(welcome)
+    print("--------------------------------------------------")
+    time.sleep(1)
+    print("Instructions: guess the correct word chosen by the computer.")
+    print("The player can only guess one letter or word at a time.")
+    print("All enteries to be made in uppercase")
+    print("--------------------------------------------------")
+    time.sleep(1)
+    print("MENU")
+    time.sleep(1)
+    print("Choose " + "1" + " To Start Playing The Hangman Game")
+    print("Choose " + "2" + " To Choose The Desired Level")
+    print("--------------------------------------------------")
+
+    while True:
+        setup = input("\n")
+        if setup == "1":
+            time.sleep(1)
+            name = input("\nWhat is your name: ").upper()
+            print("\nBest of Luck " + name)
+            print("--------------------------------------------------")
+            time.sleep(1)
+            print("\nThe Hangman Game is about to start.\n")
+            print("--------------------------------------------------")
+            time.sleep(1)
+
+            character = obtain_character()
+            lives = 6
+            play_hangman(character, lives)
+            while input("Would you like to play again? "
+                        "(y/n) ").upper() in ["Y", "YES"]:
+                print("Start a new game")
+                character = obtain_character()
+                lives = 6
+                play_hangman(character, lives)
+            break
+        elif setup == "2":
+            print("Select Level\n")
+            print("Choose A for level 1 which has 6 lives")
+            print("Choose B for level 2 which has 4 lives")
+            level = input("\n").upper()
+            if level == "A":
+                lives = 6
+                character = obtain_character()
+                play_hangman(character, lives)
+                while input("Would you like to play again? "
+                            "(y/n) ").upper() in ["Y", "YES"]:
+                    print("Start a new game")
+                    character = obtain_character()
+                    lives = 6
+                    play_hangman(character, lives)
+            elif level == "B":
+                lives = 4
+                character = obtain_character()
+                play_hangman(character, lives)
+                while input("Would you like to pay again? "
+                            "(y/n) ").upper() in ["Y", "YES"]:
+                    print("Start a new game")
+                    character = obtain_character()
+                    lives = 4
+                    play_hangman(character, lives)
+            else:
+                print("Incorrect level selected. Please try again.")
+        else:
+            print("\nPlease Choose 1 or 2")
 
 
 if __name__ == "__main__":

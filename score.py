@@ -74,6 +74,7 @@ welcome = """
                                                                                             |___/                           
 """.strip()
 
+
 win = """
 __   __           __        ___       
 \ \ / ___  _   _  \ \      / (_) __ _ 
@@ -95,5 +96,5 @@ loose = """
 menu = [
     "Choose 1 To Start Playing The Hangman Game"
     "Choose 2 To Choose The Desired Level"
-   
+
 ]
