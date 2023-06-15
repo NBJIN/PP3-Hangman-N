@@ -1,4 +1,19 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+###### insert picture of project 
+
+# Hangman
+
+<p align="justify" >
+Hangman is a Python terminal game.  The player gets a number of lives to guess the word presented to them in 
+underscores by inputting letter untill they have guessed the word or entered too many failed guesses in which 
+it is game over.  The target audience is 
+</p>
+<br>
+
+## Table of Contents
+#
+1. [ User Experience](#user-experience)
+
+a) Project 
 
 Welcome noreen,
 
