@@ -109,6 +109,7 @@ def play_hangman(character, lives):
             else:
                 print("Your guess is incorrect.")
                 lives -= 1
+                print(f"You have {lives} lives remaining")
             print(show_hangman(lives))
             print(character_complete)
             print("\n")
@@ -120,7 +121,7 @@ def play_hangman(character, lives):
         print("Congratulations you guessed the character "
               + character_complete + " you have won this game")
     else:
-        print("Im sorry you have ran out of lives. "
+        print("The game has now ended. "
               "The word was ", character)
         print("Please try again")
 
@@ -142,7 +143,6 @@ def main():
         character = obtain_character()
         lives = 6
         play_hangman(character, lives)
-
 
 
 if __name__ == "__main__":
