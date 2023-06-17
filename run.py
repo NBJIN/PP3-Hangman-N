@@ -37,6 +37,8 @@ def play_hangman(character, lives):
 
     while not success and lives > 0:
         player_guess = input("Please guess a letter or character: ").upper()
+        if not player_guess.isalpha():
+            print("Error: The Hangman game only accepts letters or words.")
         try:
             if len(player_guess) == 1 and player_guess.isalpha():
                 if player_guess in guess_characters:
