@@ -107,9 +107,10 @@ def main():
     print(welcome)
     print("--------------------------------------------------")
     time.sleep(1)
-    print("Instructions: guess the correct word chosen by the computer.")
+    print("Instructions: Guess the correct word chosen by the Hangman program.")
     print("The player can only guess one letter or word at a time.")
     print("All enteries to be made in uppercase")
+    print("The program only accepts letters or words.  ")
     print("--------------------------------------------------")
     time.sleep(1)
     print("MENU")
@@ -142,28 +143,28 @@ def main():
             break
         elif setup == "2":
             print("Select Level\n")
-            print("Choose A for level 1 which has 6 lives")
-            print("Choose B for level 2 which has 4 lives")
+            print("Choose A for level 1 which has 8 lives")
+            print("Choose B for level 2 which has 6 lives")
             level = input("\n").upper()
             if level == "A":
-                lives = 6
+                lives = 8
                 character = obtain_character()
                 play_hangman(character, lives)
                 while input("Would you like to play again? "
                             "(y/n) ").upper() in ["Y", "YES"]:
                     print("Start a new game")
                     character = obtain_character()
-                    lives = 6
+                    lives = 8
                     play_hangman(character, lives)
             elif level == "B":
-                lives = 4
+                lives = 6
                 character = obtain_character()
                 play_hangman(character, lives)
                 while input("Would you like to pay again? "
                             "(y/n) ").upper() in ["Y", "YES"]:
                     print("Start a new game")
                     character = obtain_character()
-                    lives = 4
+                    lives = 6
                     play_hangman(character, lives)
             else:
                 print("Incorrect level selected. Please try again.")
