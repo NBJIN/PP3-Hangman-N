@@ -144,18 +144,26 @@ def main():
             break
         elif setup == "2":
             print("Select Level\n")
-            print("Choose A for level 1 which has 8 lives")
+            print("Choose A for level 1 which has 4 lives")
             print("Choose B for level 2 which has 6 lives")
             level = input("\n").upper()
+            time.sleep(1)
+            name = input("\nWhat is your name: ").upper()
+            print("\nBest of Luck " + name)
+            print("--------------------------------------------------")
+            time.sleep(1)
+            print("\nThe Hangman Game is about to start.\n")
+            print("--------------------------------------------------")
+            time.sleep(1)
             if level == "A":
-                lives = 8
+                lives = 4
                 character = obtain_character()
                 play_hangman(character, lives)
                 while input("Would you like to play again? "
                             "(y/n) ").upper() in ["Y", "YES"]:
                     print("Start a new game")
                     character = obtain_character()
-                    lives = 8
+                    lives = 4
                     play_hangman(character, lives)
             elif level == "B":
                 lives = 6
@@ -170,7 +178,7 @@ def main():
             else:
                 print("Incorrect level selected. Please try again.")
         else:
-            print("\nPlease Choose 1 or 2")
+            print("\nPlease Choose A or B")
 
 
 if __name__ == "__main__":
