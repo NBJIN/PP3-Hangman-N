@@ -23,12 +23,22 @@ The respository can be vistited at PUT IN FINAL LINK HERE
     b) [ Player User Goals](#player-user-goals)<br>
     c) [ Flowchart](#flowchart)    
 
-4. [ Features](#Features)
+4. [ Features](#features)
+
+5. [ Testing](#testing)
+
+6. [ Technologies Used](#technologies-used)
+
+7. [ Bugs](#bugs)
+
+8. [ Deployment](#deployment)
+
+9. [ Credits](#credits)
 #
 
 
 
-## How To Play 
+## 1. How To Play 
 #
 The idea of the Hangman Game is to get the hidden word so in order to play the game the player goes through the following steps On Gitpod. 
 
@@ -55,10 +65,17 @@ character.
 19) It also displays congratulations you guessed the character and then the name of the character and confirms to the player that they have won the game.  
 20) It then asks the player if the would like to play again and the user enters y for yes and n for no.  
 21) When the user starts the game and chooses option 2 in the menu section to choose their desired level it will display 2 options back to the user where they can A choose a a level which has 4 lives or B which has 6 lives. 
-22) The Hangman program will then ask the user for their name and the game starts all over again from point 5 above.  
+22) The Hangman program will then ask the user for their name and the game starts all over again from point 5 above. 
+<br>
+<br>
+
+When the player wishes to play the game on Heroku it similar steps to the above but in the Heroku Link the player clicks on RUN PROGRAM which will initiate the Hangman game and the steps can be followed as per point 2 above when running it it Gitpod.
+
+<br>
+
 #
 
-## Target Audience
+## 2 Target Audience
 
 Hangman is a game for everyone: 
 - Adults who just want a break from computer work and want to play a game for fun or to do something deifferent for 10 minutes. 
@@ -66,7 +83,7 @@ Hangman is a game for everyone:
 - Teachers can use with students.  
 
 #
-## UX - Planning Stage
+## 3 UX - Planning Stage
 
 - Developer / Owner Goals
     - To offer entertainment to the player who wants to play the game
@@ -92,7 +109,140 @@ In brainstroming and designing stage for this game i put togeather a flowchart o
 
 
 # 
-## Features 
+## 4 Features
+
+### Existing Features
+- Start Game <br>
+On Heroku the player clicks on "Run Program" 
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/abdd8f4a-021c-4468-b328-d92ed81cf362) 
+<br>
+In Gitpod the player will type "python3 run.py" in the terminal
+ ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/db017b2b-c95c-41b5-8c5b-0fc9cc2b5786)
+
+ - Every step after this will be the same on Heroku and Gitpod
+
+ - Welcome Screen is displayed to the Player which displays "Welcome To Hangman" in ASCII text.  A picture of the hangman is also displayed along with the Instruction for the player.  This also includes a Menu section where the player can 1 choose to start playing hangman or 2 choose the desired level.  
+ ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/fcf94e26-8e79-4e6b-a0b0-86af6dad2ed7)
+ ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/34b2cc5a-782c-4796-a866-901937c0b440)
+
+ - If the player chooses option 1 to start playing the game they will be asked for their name, wished the best of luck and advised that the game is about to start in which it will display the start of the hangman image without any parts.  (I have a print statement in my code at present just to show the word that is randomly selected by the Hangman program).  The player is then requested to gues a letter or character.  
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/bccb6a5d-7495-444b-add0-0c06b714334f)
+
+- If the player input a correct guess a message is displayed confirming the guess is correct and the letter or word is printed in the underlined spaces provided. If the word is not fully guessed the player will be asked to guess a letter or character again.   
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/5b607e38-f229-4877-8a21-8276e38cdcb5)
+
+- If the player makes an incorrect guess the player is advised that it is incorrect, a life is lost and the number of remaining lives is printed. The hangman is also printed with the parts added.  If the player has lives remaining they will be asked to make another guess.  
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/5baab917-e512-4110-a1cc-872f1b18ba07)
+
+- If the player input somthing other than a letter or character (word) it will advise the player of same.  
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/9e767a2f-8661-462b-9930-ee614a49a14d)
+
+- Should a player guess a letter twice they are notified of same.
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/dc738934-956b-43ae-932e-af19795bafef)
+
+- When the player corectly guesses all letters or the character (word) ASCII text is displayed saying You Win and a note to say Congratulations you guess the character (word) you have won this game.  After this the player is asked wheather they would like to play again by inputting y for yes and n for no. If the player chooses y then the game starts all over again.  
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/d5b739c6-1a2c-4bca-9c50-baf90e9ba09b)
+
+- If a player looses all lives without guessing the word You Loose is displayed in ASCII text and a message is displayed to the player advising the game has ended and prints the correct word.  The player is also asked if they would like to play again by entering y for yes and n for no. 
+ ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/ed95b0ea-ded3-44e3-bdbe-327efbcf2104)
+
+
+- If the user chooses option 2 from the menu section they will then be asked to choose a level.  Should the player choose level A they will play with 4 lives.  If B is chosen the player will be given 6 lives to play with.  
+
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/e25a7a7b-546c-41f7-b926-41621190f1fc)
+
+- When the player chooses a level the game starts requested the players name and wishing the player the best of luck and notification that the Hangman game is about to start.  The start of the hangman is displayed and the player is requested to make a guess and the game begins.  (Print statement added just to show the word to show the word randomly selected by the hangman program). 
+
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/20957e6c-bcc7-4c8b-b5f5-179bec013af1)
+
+
+
+### Future Features
+- Color Scheme for example You Won Screen displayed in green text and You Loose displayed in red text.  
+- 	Record score of a number of players where they play against each other and record the best of say 5 games by connecting same to google spreadsheet which will record these results.  
+
+#
+## 5 Testing
+
+# 
+
+## 6 Technologies Used
+
+### Languages
+- 	Python - https://en.wikipedia.org/wiki/Python_(programming_language)
+<br>
+
+### Libraries
+- Random to select a random word from the wordlist
+<br>
+
+### Other
+- Code Institute full template for python used to build project - https://learn.codeinstitute.net/
+- Git used for version control by using the Gitpod terminal to commit to Git and push to GitHub - https://www.gitpod.io/ - https://www.github.com
+- GitHub is used to store the projects code after being pushed from Gitpod
+- Heroku used to host Hangman game. - https://id.heroku.com/login
+- words.txt - A list of randomly generated words to be used to select a word to play, taken from (https://www.randomlists.com/random-words). CHECK THIS
+- ASCII Art Generator - http://patorjk.com/software/taag/#p=display&f=Shadow&t=Welcome%20To%20Hangman 
+
+#
+
+
+## 7 Bugs
+
+#
+
+## 8 Deployment
+The project was deployed using Code Institutes mock terminal for Heroku.
+Steps to deploy:
+- Fork or clone this repository.
+- Ensure the Procfile is in place in your gitpod workspace and ensure all work is committed and pushed to github
+- Then go to Heroku and login - https://id.heroku.com/login.  If you don’t have an account click on signup on this link 
+- Once logged in and on the main page select “New” at the top of page 
+- Select "Create new app".
+- Name the new app and click "Create new app".
+- In "Settings" select "BuildPack" and select Python and Node.js. (Python must be at the top of the list).
+- Whilst still in "Settings", click "Reveal Config Vars" and input the following. KEY: PORT, VALUE: 8000. Nothing else is needed here as this project does not have any sensitive files.
+- Click on "Deploy" and select your deploy method and repository.
+- Click "Connect" on selected repository.
+- Either choose "Enable Automatic Deploys" or "Deploy Branch" in the manual deploy section.
+- Heroku will now deploy the site.
+#
+	
+## 9 Credits
+- Code Institute LMS for notes and videos and also the template provided for the project.  https://learn.codeinstitute.net/dashboard
+- Random Word Generator - to generate a random list of 500 words for the game.
+- The following python tutorials for inspiration on how to build a hang man game.  
+https://youtu.be/m4nEnsavl6w (Kite)
+https://youtu.be/cJJTnI22IF8 (Kylie Ying)
+- ASCII Art Generator http://patorjk.com/software/taag/#p=display&f=Shadow&t=Welcome%20To%20Hangman - for creating word art for welcome, you won and game over screens.
+- Slack for researching and troubleshooting problems/issues with code - https://slack.com/intl/en-ie/
+- Slack project-portfolio-3 channel for research, guidance on structure, layout and design.  
+- Python All-In-One for dummies 2nd Edition by John C. Shovic and Alan Simpson
+- Stackoverflow used to research some issues - https://stackoverflow.com/
+- Cohort Facilitator at CI for all their help and guidance
+- Cohort Lead and class for all their help and support. 
+- Tutor Assistance at CI who guided me in resolving bugs and issues in code
+- Student Care at CI for all their Support and guidance
+- My Mentor for excellent ideas, guidance and support.  
+
+#
+#
+#
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 * Your code must be placed in the `run.py` file
 * Your dependencies must be placed in the `requirements.txt` file
 * Do not edit any of the other files or your code may not deploy properly
