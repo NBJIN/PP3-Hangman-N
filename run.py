@@ -1,4 +1,3 @@
-
 """
 Libraries and imports
 """
@@ -10,7 +9,7 @@ from score import (
     loose,
     welcome,
     )
-from time import sleep
+# from time import sleep
 from wordlists import characters
 
 
@@ -64,7 +63,6 @@ def play_hangman(character, lives):
                     if "_" not in character_complete:
                         success = True
                         break
-
             elif len(player_guess) == len(character) and \
                     player_guess.isalpha():
                 if player_guess in guess_characters:
@@ -78,7 +76,6 @@ def play_hangman(character, lives):
                     success = True
                     character_complete = character
                     break
-
             else:
                 print("Your guess is incorrect.")
                 lives -= 1
@@ -86,7 +83,6 @@ def play_hangman(character, lives):
             print(show_hangman(lives))
             print(character_complete)
             print("\n")
-
         except ValueError:
             print("Invalid input. Please try again.")
 
@@ -94,21 +90,19 @@ def play_hangman(character, lives):
         print(win)
         print("Congratulations you guessed the character "
               + character_complete + " you have won this game")
-
     else:
         print(loose)
         print("The game has now ended. "
               "The word was ", character)
         print("Please try again")
-
     return success
 
 
 def main():
     """
-    Welcome player to hangman and 
-    they can choose wheater to play the game 
-    or choose a different level.  
+    Welcome player to hangman and
+    they can choose wheater to play the game
+    or choose a different level.
     """
     print(welcome)
     print("--------------------------------------------------")
