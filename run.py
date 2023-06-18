@@ -5,9 +5,9 @@ import random
 import time
 from score import (
     show_hangman,
-    win,
-    loose,
-    welcome,
+    WIN,
+    LOOSE,
+    WELCOME,
     )
 # from time import sleep
 from wordlists import characters
@@ -87,11 +87,11 @@ def play_hangman(character, lives):
             print("Invalid input. Please try again.")
 
     if success:
-        print(win)
+        print(WIN)
         print("Congratulations you guessed the character "
               + character_complete + " you have won this game")
     else:
-        print(loose)
+        print(LOOSE)
         print("The game has now ended. "
               "The word was ", character)
         print("Please try again")
@@ -104,7 +104,7 @@ def main():
     they can choose wheater to play the game
     or choose a different level.
     """
-    print(welcome)
+    print(WELCOME)
     print("--------------------------------------------------")
     time.sleep(1)
     print("Instructions:")
