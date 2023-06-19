@@ -116,6 +116,16 @@ LOOSE = """
 
 """
 
+GAME_OVER = """
+
+
+   ___|                               _ \\
+  |       _` |  __ `__ \\    _ \\      |   | \\ \\   /  _ \\   __|
+  |   |  (   |  |   |   |   __/      |   |  \\ \\ /   __/  |
+ \\____| \\__,_| _|  _|  _| \\___|     \\___/    \\_/  \\___| _|
+
+ """
+
 menu = [
     "Choose 1 To Start Playing The Hangman Game"
     "Choose 2 To Choose The Desired Level"

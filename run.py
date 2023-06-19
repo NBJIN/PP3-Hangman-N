@@ -11,6 +11,7 @@ from score import (
     WIN,
     LOOSE,
     WELCOME,
+    GAME_OVER,
     )
 # from time import sleep
 from wordlists import characters
