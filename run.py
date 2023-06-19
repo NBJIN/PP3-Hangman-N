@@ -1,8 +1,11 @@
 """
+Portfolio Project 3 
+
 Libraries and imports
 """
 import random
 import time
+import os
 from score import (
     show_hangman,
     WIN,
@@ -11,6 +14,14 @@ from score import (
     )
 # from time import sleep
 from wordlists import characters
+
+
+def clear_terminal():
+    """
+    Clear terminal
+    """
+    os.system(('cls' if os.name == 'nt' else 'clear'))
+    main()
 
 
 def obtain_character():
