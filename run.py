@@ -1,5 +1,5 @@
 """
-Portfolio Project 3 
+Portfolio Project 3
 
 Libraries and imports
 """
@@ -20,8 +20,13 @@ def clear_terminal():
     """
     Clear terminal
     """
-    os.system(('cls' if os.name == 'nt' else 'clear'))
-    main()
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
+
+
+clear_terminal()
 
 
 def obtain_character():
