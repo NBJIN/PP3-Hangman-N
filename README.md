@@ -38,7 +38,7 @@ The respository can be vistited at PUT IN FINAL LINK HERE
 
 
 
-## 1. How To Play 
+## 1. How To Play<a name="how-to-play"></a>
 #
 The idea of the Hangman Game is to get the hidden word so in order to play the game the player goes through the following steps On Gitpod. 
 
@@ -75,7 +75,7 @@ When the player wishes to play the game on Heroku it similar steps to the above 
 
 #
 
-## 2 Target Audience
+## 2 Target Audience<a name="target-audience"></a>
 
 Hangman is a game for everyone: 
 - Adults who just want a break from computer work and want to play a game for fun or to do something deifferent for 10 minutes. 
@@ -83,7 +83,7 @@ Hangman is a game for everyone:
 - Teachers can use with students.  
 
 #
-## 3 UX - Planning Stage
+## 3 UX - Planning Stage<a name="ux-planning-stage"></a>
 
 - Developer / Owner Goals
     - To offer entertainment to the player who wants to play the game
@@ -109,7 +109,7 @@ In brainstroming and designing stage for this game i put togeather a flowchart o
 
 
 # 
-## 4 Features
+## 4 Features<a name="features"></a>
 
 ### Existing Features
 - Start Game <br>
@@ -162,11 +162,18 @@ In Gitpod the player will type "python3 run.py" in the terminal
 - 	Record score of a number of players where they play against each other and record the best of say 5 games by connecting same to google spreadsheet which will record these results.  
 
 #
-## 5 Testing
+## 5 Testing<a name="testing"></a>
+
+#
+<br>
+
+### Please refer to testing.md file for full breakdown of testing that was carried out.  
+
+[Testing](testing.md)
 
 # 
 
-## 6 Technologies Used
+## 6 Technologies Used<a name="technologies-used"></a>
 
 ### Languages
 - 	Python - https://en.wikipedia.org/wiki/Python_(programming_language)
@@ -187,11 +194,11 @@ In Gitpod the player will type "python3 run.py" in the terminal
 #
 
 
-## 7 Bugs
+## 7 Bugs<a name="bugs"></a>
 
 #
 
-## 8 Deployment
+## 8 Deployment<a name="deployment"></a>
 The project was deployed using Code Institutes mock terminal for Heroku.
 Steps to deploy:
 - Fork or clone this repository.
@@ -208,7 +215,7 @@ Steps to deploy:
 - Heroku will now deploy the site.
 #
 	
-## 9 Credits
+## 9 Credits<a name="credits"></a>
 - Code Institute LMS for notes and videos and also the template provided for the project.  https://learn.codeinstitute.net/dashboard
 - Random Word Generator - to generate a random list of 500 words for the game.
 - The following python tutorials for inspiration on how to build a hang man game.  
