@@ -158,7 +158,20 @@ def main():
                 character = obtain_character()
                 lives = 6
                 play_hangman(character, lives)
+            # if input("Would you like to play again? "
+            #          "(y/n) ").upper() in ["N", "NO"]:
+
+
+            # play_game = ""
+            # while play_game not in ["Y", "YES", "N", "NO"]:
+            #     play_game = input("Would you like to play again? (y/n): ").upper()
+
+            # if play_hangman in ["N", "NO"]:
+            # while input("Would you like to play again? "
+            #             "(y/n) ").upper() in ["N", "NO"]:
+            print(GAME_OVER)
             break
+
         elif setup == "2":
             print("Select Level\n")
             print("Choose A for level 1 which has 4 lives")
