@@ -161,7 +161,6 @@ def main():
             # if input("Would you like to play again? "
             #          "(y/n) ").upper() in ["N", "NO"]:
 
-
             # play_game = ""
             # while play_game not in ["Y", "YES", "N", "NO"]:
             #     play_game = input("Would you like to play again? (y/n): ").upper()
@@ -178,7 +177,7 @@ def main():
             print("Choose B for level 2 which has 6 lives")
             level = input("\n").upper()
             while level not in ["A", "B"]:
-                print("Incorrect level selected. Please try again.")
+                print("Incorrect level selected. Please choose A or B.")
                 level = input().upper()
             time.sleep(1)
             name = input("\nWhat is your name: ").upper()
@@ -191,6 +190,9 @@ def main():
 
             if level == "A":
                 lives = 4
+            else:
+                lives = 6
+
                 character = obtain_character()
                 play_hangman(character, lives)
                 while input("Would you like to play again? "
@@ -200,17 +202,24 @@ def main():
                     lives = 4
                     play_hangman(character, lives)
                 print(GAME_OVER)
-            elif level == "B":
-                lives = 6
-                character = obtain_character()
-                play_hangman(character, lives)
-                while input("Would you like to pay again? "
-                            "(y/n) ").upper() in ["Y", "YES"]:
-                    print("Start a new game")
-                    character = obtain_character()
-                    lives = 6
-                    play_hangman(character, lives)
-                print(GAME_OVER)
+
+                break
+        else:
+            # while setup not in [1, 2]:
+            print("Error. Please choose 1 or 2.")
+
+            # elif level == "B":
+            #     lives = 6
+            #     character = obtain_character()
+            #     play_hangman(character, lives)
+            #     while input("Would you like to pay again? "
+            #                 "(y/n) ").upper() in ["Y", "YES"]:
+            #         print("Start a new game")
+            #         character = obtain_character()
+            #         lives = 6
+            #         play_hangman(character, lives)
+            #     print(GAME_OVER)
+
             # else:
             #     print("Incorrect level selected. Please try again.")
 
