@@ -65,6 +65,8 @@ def show_hangman(lives):
     return stages[lives]
 
 
+# ASCII Text Displays
+
 WELCOME = """
 
  \\ \\         /     |

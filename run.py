@@ -114,8 +114,8 @@ def play_hangman(character, lives):
 
 def main():
     """
-    Welcome player to hangman and
-    they can choose wheater to play the game
+    Welcomes the player to hangman game and
+    the player can choose wheather to play the game
     or choose a different level.
     """
     print(WELCOME)
