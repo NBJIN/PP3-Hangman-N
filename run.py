@@ -177,6 +177,9 @@ def main():
             print("Choose A for level 1 which has 4 lives")
             print("Choose B for level 2 which has 6 lives")
             level = input("\n").upper()
+            while level not in ["A", "B"]:
+                print("Incorrect level selected. Please try again.")
+                level = input().upper()
             time.sleep(1)
             name = input("\nWhat is your name: ").upper()
             print("\nBest of Luck " + name)
@@ -185,6 +188,7 @@ def main():
             print("\nThe Hangman Game is about to start.\n")
             print("--------------------------------------------------")
             time.sleep(1)
+
             if level == "A":
                 lives = 4
                 character = obtain_character()
@@ -195,6 +199,7 @@ def main():
                     character = obtain_character()
                     lives = 4
                     play_hangman(character, lives)
+                print(GAME_OVER)
             elif level == "B":
                 lives = 6
                 character = obtain_character()
@@ -205,10 +210,11 @@ def main():
                     character = obtain_character()
                     lives = 6
                     play_hangman(character, lives)
-            else:
-                print("Incorrect level selected. Please try again.")
-        else:
-            print("\nPlease Choose A or B")
+                print(GAME_OVER)
+            # else:
+            #     print("Incorrect level selected. Please try again.")
+
+            #     print("\nPlease Choose A or B")
 
 
 if __name__ == "__main__":
