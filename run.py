@@ -50,7 +50,7 @@ def play_hangman(character, lives):
     print(character)
 
     while not success and lives > 0:
-        player_guess = input("Please guess a letter or character: ").upper()
+        player_guess = input("Please guess a letter or word: ").upper()
         if not player_guess.isalpha():
             print("Error: The Hangman game only accepts letters or words.")
         try:
@@ -58,7 +58,7 @@ def play_hangman(character, lives):
                 if player_guess in guess_characters:
                     print("This letter has been guessed already", player_guess)
                 elif player_guess not in character:
-                    print(player_guess, "is not in the character.")
+                    print(player_guess, "is not in the word.")
                     print("You loose a life")
                     lives -= 1
                     print(f"You have {lives} lives remaining")
@@ -81,9 +81,9 @@ def play_hangman(character, lives):
             elif len(player_guess) == len(character) and \
                     player_guess.isalpha():
                 if player_guess in guess_characters:
-                    print("Character already guessed", player_guess)
+                    print("This guess has  already been guessed", player_guess)
                 elif player_guess.upper() != character:
-                    print(player_guess, "is not the character.")
+                    print(player_guess, "is not the word.")
                     lives -= 1
                     print(f"You have {lives} lives remaining")
                     guess_characters.append(player_guess)
@@ -102,7 +102,7 @@ def play_hangman(character, lives):
             print("Invalid input. Please try again.")
     if success:
         print(WIN)
-        print("Congratulations you guessed the character "
+        print("Congratulations you guessed the word "
               + character_complete + " you have won this game")
     else:
         print(LOOSE)

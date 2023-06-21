@@ -88,7 +88,7 @@ Hangman is a game for everyone:
 - Developer / Owner Goals
     - To offer entertainment to the player who wants to play the game
     - To provide the user with clear instruction and information. 
-    - To allow the user interact with the game by adding inputs to questions and guesses for characters.  
+    - To allow the user interact with the game by adding inputs to questions and guesses for words.  
     <br>
     <br>
 
@@ -114,10 +114,10 @@ In brainstroming and designing stage for this game i put togeather a flowchart o
 ### Existing Features
 - Start Game <br>
 On Heroku the player clicks on "Run Program" 
-![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/abdd8f4a-021c-4468-b328-d92ed81cf362) 
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/abdd8f4a-021c-4468-b328-d92ed81cf362) PUT IN NEW SCREEN SHOT 
 <br>
 In Gitpod the player will type "python3 run.py" in the terminal
- ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/db017b2b-c95c-41b5-8c5b-0fc9cc2b5786)
+ ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/db017b2b-c95c-41b5-8c5b-0fc9cc2b5786) PUT IN NEW SCREEN SHOT 
 
  - Every step after this will be the same on Heroku and Gitpod
 
@@ -190,6 +190,7 @@ In Gitpod the player will type "python3 run.py" in the terminal
 - Heroku used to host Hangman game. - https://id.heroku.com/login
 - wordlists.py - A list of randomly generated words to be used to select a word to play, taken from (https://www.randomlists.com/)
 - ASCII Art Generator - http://patorjk.com/software/taag/#p=display&f=Shadow&t=Welcome%20To%20Hangman 
+- The flowchart for this project was generated using the following website - https://www.smartdraw.com/
 
 #
 
