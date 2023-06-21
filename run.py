@@ -206,22 +206,22 @@ def main():
             else:
                 lives = 6
 
-                character = obtain_character()
-                play_hangman(character, lives)
+            character = obtain_character()
+            play_hangman(character, lives)
 
-                while True:
-                    play_again = input("Would you like to play "
-                                       "again? (y/n) ").upper()
-                    if play_again == "Y":
-                        print("Start a new game")
-                        character = obtain_character()
-                        lives = 4
-                        play_hangman(character, lives)
-                    elif play_again == "N":
-                        print(GAME_OVER)
-                        break
-                    else:
-                        print("Invalid input. Please enter y or n.")
+            while True:
+                play_again = input("Would you like to play "
+                                   "again? (y/n) ").upper()
+                if play_again == "Y":
+                    print("Start a new game")
+                    character = obtain_character()
+                    lives = 4
+                    play_hangman(character, lives)
+                elif play_again == "N":
+                    print(GAME_OVER)
+                    break
+                else:
+                    print("Invalid input. Please enter y or n.")
         else:
             print("Error. Please choose 1 or 2.")
 
