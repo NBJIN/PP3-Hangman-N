@@ -122,43 +122,31 @@ def main():
     print("--------------------------------------------------")
     time.sleep(1)
     print("Instructions:")
-    print("1. The object of the game is to guess the hidden word chosen "
-          "by the Hangman program.")
+    print("1. The object of the game is to guess the hidden word.")
     print("2. Each letter is represented by an underscore in the hidden word.")
     print("3. The player can only guess one letter or word at a time.")
     print("4. The program only accepts letter or words.  ")
-    print("5. If the player chooses option 1 in the Menu section "
-          "they are assigned 6 lives which is the default.")
-    print("6. If the player chooses option 2 in the Menu section "
-          "they can choose to play at the desired level.")
-    print("7. If the player chooses A for level 1 - "
-          "4 lives is allocated to the player.")
-    print("8. If the player chooses B for level 2 - "
-          "6 lives is allocated to the player.")
-    print("9. Each player's successful guess (letter or word) will reveal "
-          "a underscore or the word")
-    print("10. Should the player guess the word a message in ASCI text is "
-          "displayed saying the player has won, congratulates the player, "
-          "and prints the correct guessed word")
+    print("5. The player can choose option 1 or 2 in the Menu section")
+    print("6. Option 1 is assigned 6 lives which is the default.")
+    print("7. Option 2 in the Menu section offers a desired level.")
+    print("8. A is assigned 4 lives.")
+    print("9. B is assigned 6 lives.")
+    print("10. Each successful guess will reveal a underscore or the word")
+    print("11. Message saying you won is displayed if word is guessed.")
     print("11. They player is then asked if they would like to play again")
-    print("12. Choosing y will initiatite  a new game and choosing y will "
-          "print game over in ASCII text to the terminal.")
-    print("13. Confirmation of this success will be printed back "
-          "to the player.")
-    print("14. Each unsuccessfull guess the player looses a life, a message "
-          "confirming same will be printed back to the user along with the "
-          "number of lives and the next part of the hangman")
-    print("15. Should the player run out of lives without guessing the word a "
-          "message is printed back to the player advising them they have no "
-          "more lives remaining ")
-    print("16. A message is also displayed in ASCII text informing the "
-          "player they have lost the game, the game has ended and "
-          "prints the correct word.")
-    print("17. It also asks the player wheather they would like to play "
-          "again and if the player chooses y it starts the game "
-          "all over again.")
-    print("18. If the player chooses y a message in printed in ASCII "
-          "Text to the terminal saying game over.")
+    print("12. Choosing y starts a new game.")
+    print("13. choosing y will print game over.")
+    print("14. Each unsuccessfull guess the player looses a life.")
+    print("15. A message confirming same will be printed back to the user.")
+    print("16. The no. of lives and the hangman stage is also printed.")
+    print("17. If the player run out of lives without guessing the word")
+    print("    a message is printed back to the player advising them they")
+    print("     have no more lives left")
+    print("18. A message is also displayed saying You Loose")
+    print("19. It also advises the game has ended and.")
+    print("20. Player is asked if they would like to play again.")
+    print("21. If n is chosen a message prints game over.")
+    print("22. If player chooses y game starts all over again.")
     print("--------------------------------------------------")
     time.sleep(1)
     print("MENU")
@@ -182,14 +170,19 @@ def main():
             character = obtain_character()
             lives = 6
             play_hangman(character, lives)
-            while input("Would you like to play again? "
-                        "(y/n) ").upper() in ["Y", "YES"]:
-                print("Start a new game")
-                character = obtain_character()
-                lives = 6
-                play_hangman(character, lives)
-            print(GAME_OVER)
-            break
+            while True:
+                play_again = input("Would you like to play again? "
+                                   "(y/n) ").upper()
+                if play_again == "Y":
+                    print("Start a new game")
+                    character = obtain_character()
+                    lives = 6
+                    play_hangman(character, lives)
+                elif play_again == "N":
+                    print(GAME_OVER)
+                    break
+                else:
+                    print("Error please enter y or n")
 
         elif setup == "2":
             print("Select Level\n")
@@ -215,15 +208,20 @@ def main():
 
                 character = obtain_character()
                 play_hangman(character, lives)
-                while input("Would you like to play again? "
-                            "(y/n) ").upper() in ["Y", "YES"]:
-                    print("Start a new game")
-                    character = obtain_character()
-                    lives = 4
-                    play_hangman(character, lives)
-                print(GAME_OVER)
 
-                break
+                while True:
+                    play_again = input("Would you like to play "
+                                       "again? (y/n) ").upper()
+                    if play_again == "Y":
+                        print("Start a new game")
+                        character = obtain_character()
+                        lives = 4
+                        play_hangman(character, lives)
+                    elif play_again == "N":
+                        print(GAME_OVER)
+                        break
+                    else:
+                        print("Invalid input. Please enter y or n.")
         else:
             print("Error. Please choose 1 or 2.")
 
