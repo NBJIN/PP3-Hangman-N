@@ -188,7 +188,7 @@ In Gitpod the player will type "python3 run.py" in the terminal
 - Git used for version control by using the Gitpod terminal to commit to Git and push to GitHub - https://www.gitpod.io/ - https://www.github.com
 - GitHub is used to store the projects code after being pushed from Gitpod
 - Heroku used to host Hangman game. - https://id.heroku.com/login
-- words.txt - A list of randomly generated words to be used to select a word to play, taken from (https://www.randomlists.com/random-words). CHECK THIS
+- wordlists.py - A list of randomly generated words to be used to select a word to play, taken from (https://www.randomlists.com/)
 - ASCII Art Generator - http://patorjk.com/software/taag/#p=display&f=Shadow&t=Welcome%20To%20Hangman 
 
 #
