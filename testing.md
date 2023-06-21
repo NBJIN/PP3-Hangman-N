@@ -30,4 +30,15 @@ When the player clicks on Run Program on Heroku it runs the game and the player 
 - Validation 
 If the player inputs a different no, letter  or special character the Hangman Program will print an error. 
 ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/2eb1ed35-3b12-4398-b460-82a6243768a6)
-- When the player chooses the 1 in the Menu Section the game will begin where it asks the player for their name and wishes them the best of luck.  (For the purposes of testing i have the random word printed to the terminal so i validate the game this will not be printed in the actual game.) The start of the hangman displays and underscores are printed to represent the hidden word.  The player is then asked to enter a letter or word  
+- When the player chooses the 1 in the Menu Section the game will begin where it asks the player for their name and wishes them the best of luck.  (For the purposes of testing i have the random word printed to the terminal so i validate the game this will not be printed in the actual game.) The start of the hangman displays and underscores are printed to represent the hidden word.  The player is then asked to enter a letter or word.
+ ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/addfeca7-2af9-4e2d-a269-1438bb551142) 
+ - If the player doesn not enter a letter or word a message will print back to the player that the Hangman game only accepts letters or words, guess is incorrect and it deducts a life. 
+ tested with numbers
+ ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/4bdc2311-4574-49c8-aa58-d3b6545e0f6a)
+ tested with special characters
+ ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/a62d9df0-d046-4d6e-b556-4ead043e440b)
+ - When the player enters a correct guess a message of congratulations is displayed back to the player and asks the player to guess another word.  
+ ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/0a626e1a-a184-4526-ade3-eb8b7d0c4ba0)
+ - If the playeer guesses all letters/word correctly ASCII text of "You Win" is displayed back to the user along with a message that congratulates the user and displays the correct word again.  The player is also asked wheather they would like to play the game again.  
+ ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/dc4af21e-1500-4744-a10b-96bd676bee3e)
+ - Should the player enter a differnt character beside y or n to play the game again 
