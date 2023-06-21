@@ -64,4 +64,13 @@ If the player inputs a different no, letter  or special character the Hangman Pr
  <br>
  ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/a8b0239d-255e-4d75-bc80-2fdb090e922f)
  <br>
- - When the player enters 2 to choose the desired level on the menu section 
+ - When the player enters 2 to choose the desired level on the menu section two options will be presented to them.  The player can choose A if they wish to play with 4 lives or B if they wish to play with 6 lives.
+ <br>
+ ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/adee0a9a-82be-4ced-b856-c17ea0eae755)
+ - If the player does not make the correct input of A or B the game will print an error.
+ <br>
+ Error response when incorrect letter, numbere and special character is entered. 
+ <br>
+ ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/cbf7b2e2-6b73-4e03-ac03-835e3e871bf4)  
+ <br>
+ 
