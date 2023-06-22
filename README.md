@@ -5,9 +5,9 @@
 <p align="justify" >
 This Hangman game is a Python terminal guessing game where the user is playing against the Hangman program in which it randomly chooses a word.  The player tries to guess the word by suggesting a letter or even the word itself.  The word to guess is represented by a row of underscores with each underscore representing a letter.  The player gets a number of lives in order to guess the letters or word.  If the player enters too many failed attempts the game is lost.  
 
-The game can be visited at PUT IN FINAL DEPLOYED LINK
+The game can be visited at PUT IN FINAL DEPLOYED LINK - https://pp3-hangman-n-5bdc99dfc438.herokuapp.com/
 <br>
-The respository can be vistited at PUT IN FINAL LINK HERE 
+The respository can be vistited at PUT IN FINAL LINK HERE - https://github.com/NBJIN/PP3-Hangman-N
 </p>
 <br>
 
