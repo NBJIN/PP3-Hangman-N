@@ -306,3 +306,19 @@ Also tested the app on the following browsers with no issues:
 
 ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/e87fd935-7e51-4a6f-b9ec-a2f9eb0dfa89)
 
+<br>
+
+### General
+
+Underscores were not appearing in Heroku app so amended character_complete code in run.py to fix same and at final commit the following was the Heroku Screen with underscores and spaces.  
+<br>
+
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/7d7fc2d4-9edc-4975-a142-eeae80f72312)
+
+<br>
+
+Screenshot at final commit of Gitpod Terminal showing underscores with spaces
+
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/065ede25-63ab-452e-aec3-35c28119e177)
+
+
