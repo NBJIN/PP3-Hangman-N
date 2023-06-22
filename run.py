@@ -41,7 +41,8 @@ def play_hangman(character, lives):
     """
     function to play game
     """
-    character_complete = "_" * len(character)
+    # character_complete = "_" * len(character)
+    character_complete = "_".join("_" for _ in character)
     success = False
     player_guess = []
     guess_characters = []
