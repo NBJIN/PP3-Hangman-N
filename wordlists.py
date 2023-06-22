@@ -1,7 +1,6 @@
 """
-List of Cartoon Characters
+List of random words
 """
-# characters = ["DUGGIE", "BlUEY", "MINNIE"]
 
 characters = ['tidy', 'romantic', 'meal',
               'man', 'mourn', 'possible',

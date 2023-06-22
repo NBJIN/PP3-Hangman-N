@@ -3,7 +3,7 @@
 ## Testing 
 <br>
 
-### Testing of Developer / Owner Goals and Player / User Goals
+### Testing of Developer / Owner Goals and Player / User Goals - Manual Testing
 
 | Goals | Acceptance | Pass | Fail |
 |:--------|:-------|:-------|:------|
@@ -18,9 +18,9 @@
 | 4.  Easy navigation throughout the game  | The hangman game is very easy to navigate. It promptss the user for their input at every step making it very easy to naviage for the user.  | Pass |  |
 | 5.  Be challenging by providing different player levels   | In the menu section of the game when the player chooses 2 it splits into A and B where if the player chooses A they play with 4 lives and B plays with 6 lives | Pass |  |
 
-### Testing of Features and Validation
+### Testing of Features and Validation - Manual Testing
 - Start Game
-![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/abdd8f4a-021c-4468-b328-d92ed81cf362)  UPDATED SCREENSHOT 
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/abdd8f4a-021c-4468-b328-d92ed81cf362)  
 When the player clicks on Run Program on Heroku it runs the game and the player can see the Welcome banner "Welcome To Hangman".  It then displays a list of instructions which explains exactly how to play the game.  In the Menu section the player can choose 1 to start playing the hangman game or 2 to choose a desired level. 
 ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/a8212703-c927-4940-af6f-cc79d0931c5b)
 <br>
@@ -38,7 +38,7 @@ When the player clicks on Run Program on Heroku it runs the game and the player 
 - Validation 
 If the player inputs a different no, letter  or special character the Hangman Program will print an error. 
 ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/2eb1ed35-3b12-4398-b460-82a6243768a6)
-- When the player chooses the 1 in the Menu Section the game will begin where it asks the player for their name and wishes them the best of luck.  (For the purposes of testing i have the random word printed to the terminal so i validate the game this will not be printed in the actual game.) The start of the hangman displays and underscores are printed to represent the hidden word.  The player is then asked to enter a letter or word.
+- When the player chooses the number 1 in the Menu Section the game will begin where it asks the player for their name and wishes them the best of luck.  (For the purposes of testing i have the random word printed to the terminal so i validate the game this will not be printed in the actual game.) The start of the hangman displays and underscores are printed to represent the hidden word.  The player is then asked to enter a letter or word.
  ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/addfeca7-2af9-4e2d-a269-1438bb551142) 
  - If the player doesn not enter a letter or word a message will print back to the player that the Hangman game only accepts letters or words, guess is incorrect and it deducts a life.
  <br> 
@@ -132,6 +132,12 @@ Error printing as result of a number and special character being inputted.
 ![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/f2841582-8f88-4417-91ff-48b5d3ae6025)
 <br>
 
+- Finally in my testing about i had the random word printed in all my screenshots for the purposes of testing.  When the print(character) statement was removed from the run.py file the output of the random word was a series of underscores with the number of underscores adivising the player how many letter were in the randomly guessed word.  
+<br>
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/dba2c2ca-8bc8-4108-9172-85567486a98b)
+<br>
+<br>
+
 | Feature | Acceptance | Pass | Fail |
 |:--------|:-------|:-------|:------|
 | Run Program Button In Heroku   | When user clicks on button it allows the player to start the game  | Pass  |  |
@@ -152,5 +158,30 @@ Error printing as result of a number and special character being inputted.
 | Play Again    | The player is asked at the end of each game wheather successful or unsuccessfull whether they would like to play again | Pass |  |
 | Play Again Validation    | The game will only accept y if the player wants to play again and no if they do not want to play.  The game will print an error if antoher letter, number or special character is entered.  | Pass |  |
 
+<br>
+<br>
+Validation on CI Python Linter
+The code for all files named below was run on the CI Python Linter - https://pep8ci.herokuapp.com/
+<br>
+run.py file 
+<br>
 
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/090a4468-f702-49fc-9f25-27e906bd42cd)
+<br>
+score.py file
+<br>
+
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/0a8612db-5849-4e7f-9244-3db12b99d54b)
+
+<br>
+wordlists.py
+<br>
+
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/c136048f-270e-441e-ba74-c5fb72d36e84)
+
+<br>
+When flake8 was run in the terminal no errors were provided 
+<br>
+
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/7d14b1e7-a889-4b5c-80e7-b96dbbe23c12)
 

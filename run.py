@@ -1,11 +1,12 @@
 """
-Portfolio Project 3
-
-Libraries and imports
+pp3
+libraries and imports
 """
 import random
 import time
 import os
+
+
 from score import (
     show_hangman,
     WIN,
@@ -13,20 +14,21 @@ from score import (
     WELCOME,
     GAME_OVER,
     )
+
+
 from wordlists import characters
 
 
 def clear_terminal():
     """
-    Clear terminal
+    clear terminal
     """
     if os.name == 'nt':
         os.system('cls')
     else:
         os.system('clear')
 
-
-clear_terminal()
+    clear_terminal()
 
 
 def obtain_character():
@@ -47,7 +49,6 @@ def play_hangman(character, lives):
     guess_characters = []
     print(show_hangman(lives))
     print(character_complete)
-    print(character)
 
     while not success and lives > 0:
         player_guess = input("Please guess a letter or word: ").upper()
@@ -114,7 +115,7 @@ def play_hangman(character, lives):
 
 def main():
     """
-    Welcomes the player to hangman game and
+    welcomes the player to hangman game and
     the player can choose wheather to play the game
     or choose a different level.
     """
