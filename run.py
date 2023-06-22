@@ -14,8 +14,6 @@ from score import (
     WELCOME,
     GAME_OVER,
     )
-
-
 from wordlists import characters
 
 

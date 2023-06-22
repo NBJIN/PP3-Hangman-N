@@ -1,4 +1,4 @@
-![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/86b4c00a-57cb-4d50-89eb-2e531300fabc)
+![image](https://github.com/NBJIN/PP3-Hangman-N/assets/106515976/2d0d4ad6-db94-4c32-b7c8-ef847eb304f3)
 
 # Hangman
 
@@ -202,7 +202,7 @@ In Gitpod the player will type "python3 run.py" in the terminal
 - wordlists.py - A list of randomly generated words to be used to select a word to play, random list of words taken from (https://www.randomlists.com/)
 - ASCII Art Generator - http://patorjk.com/software/taag/#p=display&f=Shadow&t=Welcome%20To%20Hangman 
 - The flowchart for this project was generated using the following website - https://www.smartdraw.com/
-- Responsiveness image was generated through - https://ui.dev/amiresponsive
+- Responsiveness image was generated through - https://techsini.com/multi-mockup/index.php
 <br>
 <br>
 
